@@ -1,0 +1,110 @@
+using System;
+
+
+public class Pilha {
+  public static int Size(int lenght) {
+    return lenght + 1;
+  }
+
+  public static int Pop(int[] pilha, int lenght) {
+    lenght--;
+    return pilha[++lenght];
+  }
+
+  // inserir a esquerda
+  public static void PushRed(ref int[] pilha, ref int redlength, ref int count, ref int length, ref int topdark) {
+    if (count == pilha.Length) {
+      Pilha.NewArray(ref pilha, ref length, ref redlength, ref topdark);
+    }
+    pilha[redlength++] = 1;
+  }
+
+  // inserir a direita
+  public static void PushDark(ref int[] pilha, ref int darklength, ref int redlength, ref int topdark, ref int count, ref int length) {
+    if (count == pilha.Length) {
+      Pilha.NewArray(ref pilha, ref length, ref redlength, ref topdark);
+    }
+    darklength++;
+    pilha[--topdark] = 2;
+  }
+  
+  // newarray
+  public static void NewArray(ref int[] array, ref int length, ref int redlength, ref int topdark) {
+    int[] newarray = new int[length * 2];
+    for (int i = 0; i < length; i++) {
+      if (array[i] == 1){
+        newarray[i] = array[i];
+      }
+      if (array[i] == 2){
+        newarray[topdark+length] = array[i];
+        
+      }
+    }
+    topdark = topdark + length;
+    length *= 2;
+    array = newarray;
+    
+  }
+}
+
+public class Program {
+  public static void Main() {
+    int option = -1;
+    int length = 4;
+    int[] pilha = new int[length];
+    int redlength= 0;
+    int darklength = 0;
+    int topdark = length;
+    int count;    
+
+    
+    
+    while (option != 0) {
+      Console.WriteLine();
+      Console.WriteLine("[0] Exit/Stop");
+      Console.WriteLine("[1] Push red");
+      Console.WriteLine("[2] Push dark");
+      count = redlength + darklength;
+
+      Console.Write("Tamanho length = ");
+      Console.WriteLine(length);
+      Console.Write("Quantidade count = ");
+      Console.WriteLine(count);
+      Console.Write("TopDark = ");
+      Console.WriteLine(topdark);
+      
+
+      for (int i = 0; i < pilha.Length; i++) {
+        if (pilha[i] == 0) {
+          Console.Write("□ ");
+        } 
+        if (pilha[i] == 1) {
+          Console.Write("> ");
+        }
+        if (pilha[i] == 2) {
+          Console.Write("< ");
+        }
+      }
+
+      Console.WriteLine();
+      option = int.Parse(Console.ReadLine());
+
+      switch (option) {
+      case 0:
+        break;
+      case 1: {
+        Pilha.PushRed(ref pilha, ref redlength, ref count, ref length, ref topdark);
+        break;
+      }
+      case 2: {
+        Pilha.PushDark(ref pilha, ref darklength, ref redlength, ref topdark, ref count, ref length);
+        break;
+      }
+      }
+    }
+
+      
+
+      
+  }
+}
