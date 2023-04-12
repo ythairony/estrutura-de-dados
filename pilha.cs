@@ -62,6 +62,18 @@ public class Pilha {
     } 
     pilha[--topDark] = n;
   }
+
+  public void PopRed() {
+    Console.WriteLine("Pop RED");
+    Console.WriteLine(pilha[topRed]);
+    topRed-=1;
+  }
+
+  public void PopDark() {
+    Console.WriteLine("Pop DARK");
+    Console.WriteLine(pilha[topDark]);
+    topDark+=1;
+  }
   
   public static int IsFull(int topRed, int topDark) {
     if (topRed + 1 == topDark) {
@@ -114,6 +126,14 @@ public class Program {
     p.Mostrar(p);
 
     p.PushDark(23); // incrementar 
+    p.Mostrar(p);
+
+    p.PopRed();
+    p.PopDark();
+    p.Mostrar(p);
+
+
+    p.PushRed(15); // incrementar 
     p.Mostrar(p);
     
   }
