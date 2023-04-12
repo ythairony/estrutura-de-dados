@@ -1,0 +1,10 @@
+public void IsEmpty(int[] novaPilha) {
+    for (int i = 0; i < length ; i++) {
+      int j = 0;
+      if (i > topRed) {
+        i+=length;
+      }
+      novaPilha[i] = pilha[j];
+      j++;
+    }
+  }
