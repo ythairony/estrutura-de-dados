@@ -1,2 +1,0 @@
-testando git clone e git push 
-testando git pull
