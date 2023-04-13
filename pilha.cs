@@ -90,8 +90,6 @@ public class Pilha {
     Console.WriteLine(p.topRed);
     Console.Write("topDark = ");
     Console.WriteLine(p.topDark);
-    Console.Write("length = ");
-    Console.WriteLine(p.length);
     Console.WriteLine();
     
   }
@@ -100,41 +98,38 @@ public class Pilha {
 public class Program {
   public static void Main() {
     Pilha p = new Pilha(1);
-    
-    p.PushRed(10); // incrementar 
-    p.Mostrar(p); // mostrar pilha pos incremento
+    int red = 10;
+    int dark = 99;
+    int option = -1;
 
-    p.PushRed(11); // incrementar 
-    p.Mostrar(p); // mostrar pilha pos incremento
+    Console.WriteLine("-----------------");
+    Console.WriteLine("Pilha rubro negra");
+    Console.WriteLine("-----------------");
 
-    p.PushRed(12); // incrementar 
-    p.Mostrar(p); // mostrar pilha pos incremento
+    Console.WriteLine(); 
+    while (option != 0) {
+      Console.WriteLine("[0] Sair");
+      Console.WriteLine("[1] Push RED");
+      Console.WriteLine("[2] Push DARK");
+      
+      Console.Write("Escolha uma opção: ");
+      option = int.Parse(Console.ReadLine());
+      Console.WriteLine();
 
-    p.PushRed(13); // incrementar 
-    p.Mostrar(p); // mostrar pilha pos incremento
-
-    p.PushRed(14); // incrementar 
-    p.Mostrar(p);
-
-    p.PushDark(20); // incrementar 
-    p.Mostrar(p);
-
-    p.PushDark(21); // incrementar 
-    p.Mostrar(p);
-
-    p.PushDark(22); // incrementar 
-    p.Mostrar(p);
-
-    p.PushDark(23); // incrementar 
-    p.Mostrar(p);
-
-    p.PopRed();
-    p.PopDark();
-    p.Mostrar(p);
-
-
-    p.PushRed(15); // incrementar 
-    p.Mostrar(p);
-    
+      switch (option) {
+      case 0 : 
+        break;
+      case 1 :
+        p.PushRed(red);
+        p.Mostrar(p);
+        red++;
+        break;
+      case 2 :
+        p.PushDark(dark);
+        p.Mostrar(p);
+        dark--;
+        break;
+      }
+    }
+    }
   }
-}
