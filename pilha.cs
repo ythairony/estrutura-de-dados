@@ -17,48 +17,33 @@ public class Pilha {
     topDark = length;
   }
 
+  public void Resize() {
+    int[] newStack = new int[length * 2];
+    for (int i = 0; i < topDark; i++) {
+      newStack[i] = pilha[i];
+    } 
+    for (int j = topDark + length; j < length * 2; j++) {
+      newStack[j] = pilha[j-length];
+    }
+    pilha = newStack;
+    topDark += length;
+    length *= 2;
+  }
+  
   public void PushRed(int n) {
-    Console.WriteLine("Push RED"); // apagar dps
-    Boolean x = true;
+    Console.WriteLine("Push RED"); 
     
     if (topRed + 1 == topDark) {
-      int[] novaPilha = new int[length * 2];
-      int j = 0;
-      
-      for (int i = 0; i < length ; i++) {
-        if (i > topRed && x) {
-          x = false;
-          i+=length;
-        }
-        novaPilha[i] = pilha[j];
-        j++;
-      }
-      pilha = novaPilha;
-      topDark+=length;
-      length*=2;
+      Resize();
     } 
     pilha[++topRed] = n;
   }
 
   public void PushDark(int n) {
-    Console.WriteLine("Push DARK"); // apagar dps
-    Boolean x = true;
+    Console.WriteLine("Push DARK"); 
     
     if (topRed + 1 == topDark) {
-      int[] novaPilha = new int[length * 2];
-      int j = 0;
-      
-      for (int i = 0; i < length * 2 ; i++) {
-        if (i > topRed && x) {
-          x = false;
-          i+=length;
-        }
-        novaPilha[i] = pilha[j];
-        j++;
-      }
-      pilha = novaPilha;
-      topDark+=length;
-      length*=2;
+      Resize();
     } 
     pilha[--topDark] = n;
   }
