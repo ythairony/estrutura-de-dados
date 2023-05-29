@@ -1,0 +1,15 @@
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadListArray\obj\Debug\net7.0\TadListArray.csproj.AssemblyReference.cache
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadListArray\obj\Debug\net7.0\TadListArray.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadListArray\obj\Debug\net7.0\TadListArray.AssemblyInfoInputs.cache
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadListArray\obj\Debug\net7.0\TadListArray.AssemblyInfo.cs
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadListArray\obj\Debug\net7.0\TadListArray.csproj.CoreCompileInputs.cache
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadListArray\bin\Debug\net7.0\TadListArray.exe
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadListArray\bin\Debug\net7.0\TadListArray.deps.json
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadListArray\bin\Debug\net7.0\TadListArray.runtimeconfig.json
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadListArray\bin\Debug\net7.0\TadListArray.dll
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadListArray\bin\Debug\net7.0\TadListArray.pdb
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadListArray\obj\Debug\net7.0\TadListArray.dll
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadListArray\obj\Debug\net7.0\refint\TadListArray.dll
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadListArray\obj\Debug\net7.0\TadListArray.pdb
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadListArray\obj\Debug\net7.0\TadListArray.genruntimeconfig.cache
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadListArray\obj\Debug\net7.0\ref\TadListArray.dll

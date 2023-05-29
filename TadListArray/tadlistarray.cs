@@ -17,15 +17,13 @@ public class TadFila {
     tadlist = new object[capacity];
   }
 
-  public int findObj(object obj) {
+  public int findObj(object obj) { //ok
     int rank = -1;
     int c = 0;
     for (int i = 0; i < size(); i++) {
       if(Object.Equals(tadlist[i], obj)) {
         rank = c;
       }
-     
-      Console.WriteLine($"{tadlist[i]} = {obj} ///  { Object.Equals(tadlist[i] , obj)}");
       c++;
     }
     Console.WriteLine(size());
@@ -33,31 +31,31 @@ public class TadFila {
     return rank;
   }
   
-  public int size() {
+  public int size() { //ok
     return len;
   }
 
-  public bool isEmpty() {
+  public bool isEmpty() { //ok
     return len == 0;
   }
 
-  public object isFirst(object obj) {
+  public object isFirst(object obj) { //ok
     return obj = tadlist[0];
   } 
 
-  public object isLast(object obj) {
+  public object isLast(object obj) { //ok
     return obj = tadlist[capacity-1];
   }
 
-  public object first() {
+  public object first() { //ok
     return tadlist[0];
   }
 
-  public object last() {
+  public object last() { //ok
     return tadlist[size()-1];
   }
 
-  public object before(object obj) {
+  public object before(object obj) { //ok
     if (isEmpty()) {
       throw new TadFilaException("TADList is empty");
     }
@@ -67,9 +65,9 @@ public class TadFila {
     } else {
       return tadlist[rank-1];
     }
-  } // ok
+  } 
 
-  public object after(object obj) {
+  public object after(object obj) { //ok
     if (isEmpty()) {
       throw new TadFilaException("TADList is empty");
     }
@@ -81,7 +79,7 @@ public class TadFila {
     }
   } // ok
 
-  public void replaceElement(object old_obj, object new_obj) {
+  public void replaceElement(object old_obj, object new_obj) { //ok
     if (isEmpty()) {
       throw new TadFilaException("TADList is empty");
     }
@@ -92,7 +90,7 @@ public class TadFila {
     }
   } //ok
 
-  public void swapElement(object obj1, object obj2) {
+  public void swapElement(object obj1, object obj2) { //ok
     int cont = 0;
     int index1 = 0 , index2 = 0;
     for (int i = 0; i < size(); i++) {
@@ -120,15 +118,9 @@ public class TadFila {
     if (size() == capacity) {
       resize();
     }
-    int rank = findRank(obj);
+    int rank = findObj(obj);
     reorganize(rank);
     this.tadlist[rank] = new_obj;
-    Console.WriteLine(tadlist[0]);
-    Console.WriteLine(tadlist[1]);
-    Console.WriteLine(tadlist[2]);
-    Console.WriteLine(tadlist[3]);
-    Console.WriteLine(tadlist[4]);
-    Console.WriteLine(tadlist[5]);
     this.len++;
   } 
 
@@ -139,7 +131,7 @@ public class TadFila {
     if (size() == capacity) {
       resize();
     }
-    int rank = findRank(obj) + 1;
+    int rank = findObj(obj) + 1;
     reorganize(rank);
     this.tadlist[rank] = new_obj;  
     this.len++;
@@ -154,7 +146,7 @@ public class TadFila {
     this.len++;
   }
 
-  public void insertLast(object obj) {
+  public void insertLast(object obj) { //ok
     if (size() == capacity) {
       resize();
     }
@@ -162,25 +154,28 @@ public class TadFila {
     this.len++;
   }
 
-  public void remove(object obj) {
+  public object remove(object obj) { //ok 
     if (isEmpty()) {
       throw new TadFilaException("List is empty");
     }
-    int rank = findRank(obj);
-    if (rank == size()) {
-      this.tadlist[rank] = null;
+    int rank = findObj(obj);
+    if (rank == size()-1) {
+      Object old = tadlist[rank];
       this.len--;
-    }
-    int j = 0;
-    for (int i = 0; i < capacity; i++) {
-      if (i == rank) {
+      return old;
+    } else {
+      Object old = tadlist[rank];
+      int j = 0;
+      for (int i = 0; i < size(); i++) {
+        if (Object.Equals(tadlist[rank], old)) {
+            j++;
+        }
+        tadlist[i] = tadlist[j];
         j++;
       }
-      this.tadlist[i] = tadlist[j];
-      j++;
+      this.len--;
+      return old;
     }
-    this.tadlist[size()] = null;
-    this.len--;
   }
 
   public void reorganize(int rank) {
@@ -189,16 +184,6 @@ public class TadFila {
     }
   }
 
-  public int findRank(object obj) {
-    int rank = 0;
-    for (int i = 0; tadlist[i] != obj; i++) {
-      rank++;
-      if (rank == size()) {
-        throw new TadFilaException("Object not in the list");
-      }
-    }
-    return rank;
-  }
   
   public void resize() {
     Object[] newTadFila = new Object[capacity * 2];
