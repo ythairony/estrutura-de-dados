@@ -1,0 +1,15 @@
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadVectorArray\obj\Debug\net7.0\TadVectorArray.csproj.AssemblyReference.cache
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadVectorArray\obj\Debug\net7.0\TadVectorArray.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadVectorArray\obj\Debug\net7.0\TadVectorArray.AssemblyInfoInputs.cache
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadVectorArray\obj\Debug\net7.0\TadVectorArray.AssemblyInfo.cs
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadVectorArray\obj\Debug\net7.0\TadVectorArray.csproj.CoreCompileInputs.cache
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadVectorArray\bin\Debug\net7.0\TadVectorArray.exe
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadVectorArray\bin\Debug\net7.0\TadVectorArray.deps.json
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadVectorArray\bin\Debug\net7.0\TadVectorArray.runtimeconfig.json
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadVectorArray\bin\Debug\net7.0\TadVectorArray.dll
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadVectorArray\bin\Debug\net7.0\TadVectorArray.pdb
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadVectorArray\obj\Debug\net7.0\TadVectorArray.dll
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadVectorArray\obj\Debug\net7.0\refint\TadVectorArray.dll
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadVectorArray\obj\Debug\net7.0\TadVectorArray.pdb
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadVectorArray\obj\Debug\net7.0\TadVectorArray.genruntimeconfig.cache
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadVectorArray\obj\Debug\net7.0\ref\TadVectorArray.dll
