@@ -1,0 +1,15 @@
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadVector\bin\Debug\net7.0\TadVector.exe
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadVector\bin\Debug\net7.0\TadVector.deps.json
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadVector\bin\Debug\net7.0\TadVector.runtimeconfig.json
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadVector\bin\Debug\net7.0\TadVector.dll
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadVector\bin\Debug\net7.0\TadVector.pdb
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadVector\obj\Debug\net7.0\TadVector.csproj.AssemblyReference.cache
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadVector\obj\Debug\net7.0\TadVector.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadVector\obj\Debug\net7.0\TadVector.AssemblyInfoInputs.cache
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadVector\obj\Debug\net7.0\TadVector.AssemblyInfo.cs
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadVector\obj\Debug\net7.0\TadVector.csproj.CoreCompileInputs.cache
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadVector\obj\Debug\net7.0\TadVector.dll
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadVector\obj\Debug\net7.0\refint\TadVector.dll
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadVector\obj\Debug\net7.0\TadVector.pdb
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadVector\obj\Debug\net7.0\TadVector.genruntimeconfig.cache
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadVector\obj\Debug\net7.0\ref\TadVector.dll

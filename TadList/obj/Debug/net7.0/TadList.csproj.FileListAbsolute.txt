@@ -1,0 +1,15 @@
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadList\bin\Debug\net7.0\TadList.exe
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadList\bin\Debug\net7.0\TadList.deps.json
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadList\bin\Debug\net7.0\TadList.runtimeconfig.json
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadList\bin\Debug\net7.0\TadList.dll
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadList\bin\Debug\net7.0\TadList.pdb
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadList\obj\Debug\net7.0\TadList.csproj.AssemblyReference.cache
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadList\obj\Debug\net7.0\TadList.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadList\obj\Debug\net7.0\TadList.AssemblyInfoInputs.cache
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadList\obj\Debug\net7.0\TadList.AssemblyInfo.cs
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadList\obj\Debug\net7.0\TadList.csproj.CoreCompileInputs.cache
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadList\obj\Debug\net7.0\TadList.dll
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadList\obj\Debug\net7.0\refint\TadList.dll
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadList\obj\Debug\net7.0\TadList.pdb
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadList\obj\Debug\net7.0\TadList.genruntimeconfig.cache
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\TadList\obj\Debug\net7.0\ref\TadList.dll
