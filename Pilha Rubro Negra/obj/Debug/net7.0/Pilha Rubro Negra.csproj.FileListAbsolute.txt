@@ -1,0 +1,15 @@
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\Pilha Rubro Negra\bin\Debug\net7.0\Pilha Rubro Negra.exe
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\Pilha Rubro Negra\bin\Debug\net7.0\Pilha Rubro Negra.deps.json
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\Pilha Rubro Negra\bin\Debug\net7.0\Pilha Rubro Negra.runtimeconfig.json
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\Pilha Rubro Negra\bin\Debug\net7.0\Pilha Rubro Negra.dll
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\Pilha Rubro Negra\bin\Debug\net7.0\Pilha Rubro Negra.pdb
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\Pilha Rubro Negra\obj\Debug\net7.0\Pilha Rubro Negra.csproj.AssemblyReference.cache
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\Pilha Rubro Negra\obj\Debug\net7.0\Pilha Rubro Negra.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\Pilha Rubro Negra\obj\Debug\net7.0\Pilha Rubro Negra.AssemblyInfoInputs.cache
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\Pilha Rubro Negra\obj\Debug\net7.0\Pilha Rubro Negra.AssemblyInfo.cs
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\Pilha Rubro Negra\obj\Debug\net7.0\Pilha Rubro Negra.csproj.CoreCompileInputs.cache
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\Pilha Rubro Negra\obj\Debug\net7.0\Pilha Rubro Negra.dll
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\Pilha Rubro Negra\obj\Debug\net7.0\refint\Pilha Rubro Negra.dll
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\Pilha Rubro Negra\obj\Debug\net7.0\Pilha Rubro Negra.pdb
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\Pilha Rubro Negra\obj\Debug\net7.0\Pilha Rubro Negra.genruntimeconfig.cache
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\Pilha Rubro Negra\obj\Debug\net7.0\ref\Pilha Rubro Negra.dll
