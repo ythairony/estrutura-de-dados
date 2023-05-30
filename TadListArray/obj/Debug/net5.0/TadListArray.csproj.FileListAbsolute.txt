@@ -1,0 +1,16 @@
+C:\Users\20222014040015\Documents\edl\estrutura-de-dados\TadListArray\bin\Debug\net5.0\TadListArray.exe
+C:\Users\20222014040015\Documents\edl\estrutura-de-dados\TadListArray\bin\Debug\net5.0\TadListArray.deps.json
+C:\Users\20222014040015\Documents\edl\estrutura-de-dados\TadListArray\bin\Debug\net5.0\TadListArray.runtimeconfig.json
+C:\Users\20222014040015\Documents\edl\estrutura-de-dados\TadListArray\bin\Debug\net5.0\TadListArray.runtimeconfig.dev.json
+C:\Users\20222014040015\Documents\edl\estrutura-de-dados\TadListArray\bin\Debug\net5.0\TadListArray.dll
+C:\Users\20222014040015\Documents\edl\estrutura-de-dados\TadListArray\bin\Debug\net5.0\ref\TadListArray.dll
+C:\Users\20222014040015\Documents\edl\estrutura-de-dados\TadListArray\bin\Debug\net5.0\TadListArray.pdb
+C:\Users\20222014040015\Documents\edl\estrutura-de-dados\TadListArray\obj\Debug\net5.0\TadListArray.csproj.AssemblyReference.cache
+C:\Users\20222014040015\Documents\edl\estrutura-de-dados\TadListArray\obj\Debug\net5.0\TadListArray.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\20222014040015\Documents\edl\estrutura-de-dados\TadListArray\obj\Debug\net5.0\TadListArray.AssemblyInfoInputs.cache
+C:\Users\20222014040015\Documents\edl\estrutura-de-dados\TadListArray\obj\Debug\net5.0\TadListArray.AssemblyInfo.cs
+C:\Users\20222014040015\Documents\edl\estrutura-de-dados\TadListArray\obj\Debug\net5.0\TadListArray.csproj.CoreCompileInputs.cache
+C:\Users\20222014040015\Documents\edl\estrutura-de-dados\TadListArray\obj\Debug\net5.0\TadListArray.dll
+C:\Users\20222014040015\Documents\edl\estrutura-de-dados\TadListArray\obj\Debug\net5.0\ref\TadListArray.dll
+C:\Users\20222014040015\Documents\edl\estrutura-de-dados\TadListArray\obj\Debug\net5.0\TadListArray.pdb
+C:\Users\20222014040015\Documents\edl\estrutura-de-dados\TadListArray\obj\Debug\net5.0\TadListArray.genruntimeconfig.cache

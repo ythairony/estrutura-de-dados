@@ -111,9 +111,9 @@ public class TadFila {
     }
   } //ok
 
-  public void insertBefore(object obj, object new_obj) {
+  public void insertBefore(object obj, object new_obj) { //ok
     if (isEmpty()) {
-      this.tadlist[0] = new_obj;
+      throw new TadFilaException("TADList is empty");
     }
     if (size() == capacity) {
       resize();
@@ -124,9 +124,9 @@ public class TadFila {
     this.len++;
   } 
 
-  public void insertAfter(object obj, object new_obj) {
+  public void insertAfter(object obj, object new_obj) { //ok
     if (isEmpty()) {
-      this.tadlist[0] = new_obj;
+      throw new TadFilaException("TADList is empty");
     }
     if (size() == capacity) {
       resize();
@@ -137,7 +137,7 @@ public class TadFila {
     this.len++;
   } 
 
-  public void insertFirst(object obj) {
+  public void insertFirst(object obj) { //ok
     if (size() == capacity) {
       resize();
     }
@@ -178,14 +178,13 @@ public class TadFila {
     }
   }
 
-  public void reorganize(int rank) {
+  public void reorganize(int rank) { //ok
     for (int i = size(); i > rank; i--) {
       this.tadlist[i] = tadlist[i-1];
     }
   }
-
   
-  public void resize() {
+  public void resize() { //ok
     Object[] newTadFila = new Object[capacity * 2];
     for (int i = 0; i < capacity; i++) {
       newTadFila[i] = tadlist[i];
