@@ -77,10 +77,14 @@ public class ArvoreSimples {
         
     }
     
-    public int height() { //implementar
-        //método exercício
+    public int height(No v) { //implementar
+        if (isExternal(v)) {
+            return 0;
+        } else {
         int altura = 0;
+        // arrumar o else
         return altura;
+        }
     }
     
     public IEnumerator elements() { //implementar
