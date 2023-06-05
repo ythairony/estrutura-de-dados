@@ -1,0 +1,16 @@
+C:\Users\20222014040015\Documents\edl\estrutura-de-dados\Arvore Simple\bin\Debug\net5.0\Arvore Simple.exe
+C:\Users\20222014040015\Documents\edl\estrutura-de-dados\Arvore Simple\bin\Debug\net5.0\Arvore Simple.deps.json
+C:\Users\20222014040015\Documents\edl\estrutura-de-dados\Arvore Simple\bin\Debug\net5.0\Arvore Simple.runtimeconfig.json
+C:\Users\20222014040015\Documents\edl\estrutura-de-dados\Arvore Simple\bin\Debug\net5.0\Arvore Simple.runtimeconfig.dev.json
+C:\Users\20222014040015\Documents\edl\estrutura-de-dados\Arvore Simple\bin\Debug\net5.0\Arvore Simple.dll
+C:\Users\20222014040015\Documents\edl\estrutura-de-dados\Arvore Simple\bin\Debug\net5.0\ref\Arvore Simple.dll
+C:\Users\20222014040015\Documents\edl\estrutura-de-dados\Arvore Simple\bin\Debug\net5.0\Arvore Simple.pdb
+C:\Users\20222014040015\Documents\edl\estrutura-de-dados\Arvore Simple\obj\Debug\net5.0\Arvore Simple.csproj.AssemblyReference.cache
+C:\Users\20222014040015\Documents\edl\estrutura-de-dados\Arvore Simple\obj\Debug\net5.0\Arvore Simple.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\20222014040015\Documents\edl\estrutura-de-dados\Arvore Simple\obj\Debug\net5.0\Arvore Simple.AssemblyInfoInputs.cache
+C:\Users\20222014040015\Documents\edl\estrutura-de-dados\Arvore Simple\obj\Debug\net5.0\Arvore Simple.AssemblyInfo.cs
+C:\Users\20222014040015\Documents\edl\estrutura-de-dados\Arvore Simple\obj\Debug\net5.0\Arvore Simple.csproj.CoreCompileInputs.cache
+C:\Users\20222014040015\Documents\edl\estrutura-de-dados\Arvore Simple\obj\Debug\net5.0\Arvore Simple.dll
+C:\Users\20222014040015\Documents\edl\estrutura-de-dados\Arvore Simple\obj\Debug\net5.0\ref\Arvore Simple.dll
+C:\Users\20222014040015\Documents\edl\estrutura-de-dados\Arvore Simple\obj\Debug\net5.0\Arvore Simple.pdb
+C:\Users\20222014040015\Documents\edl\estrutura-de-dados\Arvore Simple\obj\Debug\net5.0\Arvore Simple.genruntimeconfig.cache
