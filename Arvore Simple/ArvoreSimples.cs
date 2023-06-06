@@ -103,7 +103,7 @@ public class ArvoreSimples {
     }
     
     public bool isEmpty() { //ok
-        return raiz.childrenNumber() == 0;
+        return raiz.element() == null;
     }
     
     public Object replace(No v, Object o) { //implementar
