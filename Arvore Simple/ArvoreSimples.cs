@@ -3,49 +3,49 @@ using System.Collections;
 
 public class ArvoreSimples {
     
-    // Atributos da �rvore
+    // Atributos da Árvore
     No raiz;
     
-    int tamanho;
+    int tamanho = 0;
     
     // Construtor
-    public ArvoreSimples(Object o) { //ok
+    public ArvoreSimples(object o) { //ok
         this.raiz = new No(null, o);
-        this.tamanho = 1;
+        this.tamanho++;
     }
     
-    public No root() { //ok
+    public No root() { // rodando ok
         return this.raiz;
     }
     
     public No parent(No v) { //ok
-        return v.parent();
+        return v.GetPai();
     }
     
     public IEnumerator children(No v) { //ok
         return v.children();
     }
     
-    public bool isInternal(No v) { //ok
+    public bool isInternal(No v) { //rodando ok
         return (v.childrenNumber() > 0);
     }
     
-    public bool isExternal(No v) { //ok
+    public bool isExternal(No v) { //rodando ok
         return (v.childrenNumber() == 0);
     }
     
-    public bool isRoot(No v) { //ok
+    public bool isRoot(No v) { //ok rodando ok
         return (v == this.raiz);
     }
     
-    public void addChild(No v, Object o) { //ok
+    public void addChild(No v, object o) { //ok
         No novo = new No(v, o);
         v.addChild(novo);
         this.tamanho++;
     }
     
-    public Object remove(No v) { //ok
-        No pai = v.parent();
+    public object remove(No v) { //ok
+        No pai = v.GetPai();
         if (((pai != null) || this.isExternal(v))) {
             pai.removeChild(v);
         }
@@ -53,7 +53,7 @@ public class ArvoreSimples {
             throw new SystemException();
         }
         
-        Object o = v.element();
+        object o = v.GetElem();
         this.tamanho--;
         return o;
     }
@@ -72,7 +72,7 @@ public class ArvoreSimples {
             return 0;
         }
         else {
-            return (1 + this.profundidade(v.parent()));
+            return (1 + this.profundidade(v.GetPai()));
         }
         
     }
@@ -97,59 +97,57 @@ public class ArvoreSimples {
         return null;
     }
     
-    public int size() { //implementar
-        //método exercício
-        return 0;
+    public int size() { // rodando ok
+        return tamanho;
     }
     
-    public bool isEmpty() { //ok
-        return raiz.element() == null;
+    public bool isEmpty() { // rodando ok
+        return raiz.GetElem() == null;
     }
     
-    public Object replace(No v, Object o) { //implementar
+    public object replace(No v, object o) { //implementar
       //método exercício 
         return null;
     }//implementar
     
       public class No { //ok
         
-        private Object o;
+        private object elem;
         
         private No pai;
         
         private ArrayList filhos = new ArrayList();
         
-        public No(No pai, Object o) {
+        public No(No pai, object o) {
             this.pai = pai;
-            this.o = o;
+            this.elem = o;
         }
         
-        public Object element() {
-            return this.o;
+        public Object GetElem() { // retorna o elemento do nó
+            return this.elem;
         }
         
-        public No parent() {
+        public No GetPai() { // retorna o pai do nó
             return this.pai;
         }
         
-        public void setElement(Object o) {
-            this.o = o;
+        public void SetElement(Object o) { // setta o elemento do nó
+            this.elem = o;
         }
         
-        public void addChild(No o) {
-          
+        public void addChild(No o) { // adiciona um filho ao nó
           this.filhos.Add(o);
         }
         
-        public void removeChild(No o) {
+        public void removeChild(No o) { // remove um filho do nó
             this.filhos.Remove(o);
         }
         
-        public int childrenNumber() {
+        public int childrenNumber() { // conta quantos filhos tem o nó
             return this.filhos.Count;
         }
         
-        public IEnumerator children() {
+        public IEnumerator children() { // retorna os filhos do nó
             return this.filhos.GetEnumerator();
         }
     }
