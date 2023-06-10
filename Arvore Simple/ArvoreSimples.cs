@@ -22,7 +22,7 @@ public class ArvoreSimples {
         return v.GetPai();
     }
     
-    public IEnumerator children(No v) { //ok
+    public IEnumerator children(No v) { //rodando ok
         return v.filho();
     }
     
@@ -38,7 +38,7 @@ public class ArvoreSimples {
         return (v == this.raiz);
     }
     
-    public void addChild(No v, object o) { //ok
+    public void addChild(No v, object o) { //rodando ok
         No novo = new No(v, o);
         v.addChild(novo);
         this.tamanho++;
@@ -62,12 +62,12 @@ public class ArvoreSimples {
         //método exercício
     }
     
-    public int depth(No v) { //ok
+    public int depth(No v) { // rodando ok
         int profundidade = this.profundidade(v);
         return profundidade;
     }
     
-    private int profundidade(No v) { //ok
+    private int profundidade(No v) { // rodando ok
         if ((v == this.raiz)) {
             return 0;
         }
