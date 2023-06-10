@@ -1,0 +1,7 @@
+Arvore modelo
+
+                                [Adao]
+      /                   /             \                   \
+[João]              [José]              [Maria]             [chico]
+                                                           /       \
+                                                   [Adao Neto]     [Chico filho]

@@ -77,18 +77,22 @@ public class ArvoreSimples {
         
     }
     
-    public int height(No v) { //implementar
+    public int height(No v) { //parcialmente rodando
         if (isExternal(v)) {
             return 0;
         } else {
         int altura = 0;
-        // arrumar o else
-        return altura;
+        for (int i = 0; i < v.childrenNumber(); i++) {
+            int altura_filho = height(v.GetFilho(i));
+            altura = Math.Max(altura, altura_filho);
+        }
+        return altura + 1;
         }
     }
     
     public IEnumerator elements() { //implementar
-        //método exercício
+        //Verificar se o No tem filhos, se tiver faz recursivo
+        //Ou verificar se é externo
         return null;
     }
     
@@ -129,6 +133,10 @@ public class ArvoreSimples {
         
         public No GetPai() { // retorna o pai do nó
             return this.pai;
+        }
+
+        public No GetFilho(int i) {
+            return (ArvoreSimples.No)filhos[i];
         }
         
         public void SetElement(Object o) { // setta o elemento do nó
