@@ -18,12 +18,12 @@ public class ArvoreSimples {
         return this.raiz;
     }
     
-    public No parent(No v) { //ok
+    public No parent(No v) { // rodando ok
         return v.GetPai();
     }
     
     public IEnumerator children(No v) { //ok
-        return v.children();
+        return v.filho();
     }
     
     public bool isInternal(No v) { //rodando ok
@@ -147,7 +147,7 @@ public class ArvoreSimples {
             return this.filhos.Count;
         }
         
-        public IEnumerator children() { // retorna os filhos do nó
+        public IEnumerator filho() { // retorna os filhos do nó
             return this.filhos.GetEnumerator();
         }
     }
