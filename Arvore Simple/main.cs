@@ -4,7 +4,7 @@ using System.Collections;
 class MainClass {
   public static void Main (string[] args) {
     ArvoreSimples paizao =new ArvoreSimples("Adao");
-    ArvoreSimples.No f4 = new ArvoreSimples.No(paizao.root(), "Chico"); // depois colocar como neto de Adao
+    //ArvoreSimples.No f4 = new ArvoreSimples.No(paizao.root(), "Chico"); // depois colocar como neto de Adao
 
     Console.WriteLine($"Tamanho = {paizao.size()}"); // tamanho 1
     Console.WriteLine($"Está vazio? {paizao.isEmpty()}"); // False
@@ -18,12 +18,18 @@ class MainClass {
     // paizao.addChild(f4.GetPai(), f4.GetElem());
 
     // preparando pra printar cada filho de Adao
+    Console.WriteLine();
     IEnumerator filhos = paizao.children(paizao.root());
+
     while (filhos.MoveNext()) {
       ArvoreSimples.No filho = (ArvoreSimples.No)(filhos.Current); //perguntar a coleguinha
       string rank = (string)filho.GetElem(); //converter o elemento pra string
+      Console.WriteLine($"O pai de {rank} é {paizao.parent(filho).GetElem()}");
       Console.WriteLine($"{rank} é filho de {paizao.root().GetElem()}"); // printando cada filho
+
+      Console.WriteLine();
     }
+    
     // Console.WriteLine($"Tamanho = {paizao.size()}"); // tamanho 5
     
 
