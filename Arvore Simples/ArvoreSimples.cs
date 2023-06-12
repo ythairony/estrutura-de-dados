@@ -102,8 +102,19 @@ public class ArvoreSimples {
         return null;
     }
 
-    private void preOrder(No v) {
-        
+    int cont = 1;
+    public No preOrder(No v) {
+        No novo = v;
+        Console.WriteLine(cont);
+        Console.WriteLine(v.GetElem());
+        for (int i = 0; i < v.childrenNumber(); i++) {
+            Console.WriteLine($"Objeto = {v.GetFilho(i).GetElem()}");
+            cont++;
+            Console.WriteLine(cont);
+            novo = v.GetFilho(i);
+            preOrder(novo);
+        }
+        return novo;
     }
     
     public int size() { // rodando ok
