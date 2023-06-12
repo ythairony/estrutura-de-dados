@@ -38,10 +38,11 @@ public class ArvoreSimples {
         return (v == this.raiz);
     }
     
-    public void addChild(No v, object o) { //rodando ok
+    public No addChild(No v, object o) { //rodando ok
         No novo = new No(v, o);
         v.addChild(novo);
         this.tamanho++;
+        return novo;
     }
     
     public object remove(No v) { //ok
@@ -80,11 +81,11 @@ public class ArvoreSimples {
     public int height(No v) { //parcialmente rodando
         if (isExternal(v)) {
             return 0;
-        } else {
-        int altura = 0;
-        for (int i = 0; i < v.childrenNumber(); i++) {
-            int altura_filho = height(v.GetFilho(i));
-            altura = Math.Max(altura, altura_filho);
+        }else {
+            int altura = 0;
+            for (int i = 0; i < v.childrenNumber(); i++) {
+                int altura_filho = height(v.GetFilho(i));
+                altura = Math.Max(altura, altura_filho);
         }
         return altura + 1;
         }
@@ -99,6 +100,10 @@ public class ArvoreSimples {
     public IEnumerator Nos() { //implementar
           //método exercício
         return null;
+    }
+
+    private void preOrder(No v) {
+        
     }
     
     public int size() { // rodando ok

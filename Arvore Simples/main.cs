@@ -4,8 +4,6 @@ using System.Collections;
 class MainClass {
   public static void Main (string[] args) {
     ArvoreSimples paizao =new ArvoreSimples("Adao");
-    ArvoreSimples.No f4 = new ArvoreSimples.No(paizao.root(), "Chico"); // Criando Nó Chico
-
 
     Console.WriteLine($"Tamanho = {paizao.size()}"); // tamanho 1
     Console.WriteLine($"Está vazio? {paizao.isEmpty()}"); // False
@@ -16,14 +14,14 @@ class MainClass {
     paizao.addChild(paizao.root(), "José");
     paizao.addChild(paizao.root(), "Maria");
     Console.WriteLine($"Tamanho = {paizao.size()}"); // tamanho 4
-    paizao.addChild(f4.GetPai(), f4.GetElem()); // ADCIONANDO CHICO
-    ArvoreSimples.No neto1 = new ArvoreSimples.No(f4, "Adao Neto"); // Criando ADAO NETO
-    paizao.addChild(f4, neto1.GetElem()); // ADICIONANDO COMO FILHO DE CHICO
-    ArvoreSimples.No neto2 = new ArvoreSimples.No(f4, "Chico Filho"); // Criando Chico Filho
+    ArvoreSimples.No f4 = paizao.addChild(paizao.root(), "Chico");
+
+    ArvoreSimples.No neto1 = paizao.addChild(f4, "Adao Neto"); // ADICIONANDO COMO FILHO DE CHICO
+    ArvoreSimples.No neto2 = paizao.addChild(f4, "Chico Filho"); // Criando Chico Filho
     paizao.addChild(f4, neto2.GetElem()); // ADICIONANDO COMO FILHO DE CHICO
 
     // preparando pra printar cada filho de Adao
-    paizao.remove(f4); //"REMOVENDO" O NÓ (DECREMENTANDO) MAS AINDA PRINTA COMO FILHO
+    // paizao.remove(f4); //"REMOVENDO" O NÓ (DECREMENTANDO) MAS AINDA PRINTA COMO FILHO
     Console.WriteLine();
     Console.WriteLine("FILHOS DE ADAO");
     IEnumerator filhos = paizao.children(paizao.root());
@@ -42,8 +40,8 @@ class MainClass {
       // Testes de chico e Adao Neto não internos, externos e raiz
       Console.WriteLine($"{f4.GetElem()} É interno? {paizao.isInternal(f4)}"); // True
       Console.WriteLine($"{neto1.GetElem()} É interno? {paizao.isInternal(neto1)}"); // False
-      Console.WriteLine($"{f4.GetElem()} É raiz? {paizao.isExternal(f4)}"); // False
-      Console.WriteLine($"{neto2.GetElem()} É raiz? {paizao.isExternal(neto2)}"); // False
+      Console.WriteLine($"{f4.GetElem()} É raiz? {paizao.isRoot(f4)}"); // False
+      Console.WriteLine($"{neto2.GetElem()} É raiz? {paizao.isRoot(neto2)}"); // False
       Console.WriteLine($"{f4.GetElem()} É externo? {paizao.isExternal(f4)}"); // False
       Console.WriteLine($"{neto1.GetElem()} É externo? {paizao.isExternal(neto1)}"); // True
 
@@ -63,7 +61,8 @@ class MainClass {
      Console.WriteLine($"Pai de {neto1.GetElem()} é {paizao.parent(neto1).GetElem()}");
      Console.WriteLine($"Profundidade a partir de Adao neto = {paizao.depth(neto1)}"); // 2
      Console.WriteLine($"Profundidade a partir de chico = {paizao.depth(f4)}"); // 1
-     // Console.WriteLine($"Altura a partir do raiz é {paizao.height(paizao.root())}"); // 2
+
+     Console.WriteLine($"Altura a partir do raiz é {paizao.height(paizao.root())}"); // 1
 
 
     
