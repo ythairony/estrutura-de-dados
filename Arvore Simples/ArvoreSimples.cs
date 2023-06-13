@@ -7,6 +7,8 @@ public class ArvoreSimples {
     No raiz;
     
     int tamanho = 0;
+
+    private ArrayList a;
     
     // Construtor
     public ArvoreSimples(object o) { //ok
@@ -92,24 +94,33 @@ public class ArvoreSimples {
     }
     
     public IEnumerator elements() { //implementar
-        //Verificar se o No tem filhos, se tiver faz recursivo
-        //Ou verificar se é externo
-        return null;
+        a = new ArrayList();
+        preOrderE(root());
+        return a.GetEnumerator();
     }
     
-    public IEnumerator Nos() { //implementar
-          //método exercício
-        return null;
+    public IEnumerator nos() { //implementar
+        a = new ArrayList();
+        preOrderN(root());
+        return a.GetEnumerator();
     }
 
-    public No preOrder(No v) {
+    private void preOrderE(No v) {
         No novo = v;
+        a.Add(v.GetElem());           
         for (int i = 0; i < v.childrenNumber(); i++) {
-            Console.WriteLine($"Objeto = {novo.GetElem()}");
             novo = v.GetFilho(i);
-            preOrder(novo);
+            preOrderE(novo);
         }
-        return novo;
+    }
+
+    public void preOrderN(No v) {
+        No novo = v;
+        a.Add(v);        
+        for (int i = 0; i < v.childrenNumber(); i++) {
+            novo = v.GetFilho(i);
+            preOrderN(novo);
+        }
     }
     
     public int size() { // rodando ok

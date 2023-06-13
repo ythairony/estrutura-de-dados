@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 
-class MainClass {
+class Program {
   public static void Main (string[] args) {
     ArvoreSimples paizao =new ArvoreSimples("Adao");
 
@@ -67,8 +67,20 @@ class MainClass {
     
     Console.WriteLine();
     //Pre Order 
-    Console.WriteLine($"{paizao.preOrder(paizao.root())}");
-
+    // Console.WriteLine($"{paizao.preOrder(paizao.root())}");
+    IEnumerator abc = paizao.elements();
+    int i = 1;
+    while (abc.MoveNext()) {
+      Console.WriteLine($"Elemento do {i}º nó = {abc.Current}");
+      i++;
+    }
+    Console.WriteLine();
+    IEnumerator w = paizao.nos();
+    int j = 1;
+    while (w.MoveNext()) {
+      Console.WriteLine($"{j}º nó = {w.Current}");
+      j++;
+    }
     
   }
 }
