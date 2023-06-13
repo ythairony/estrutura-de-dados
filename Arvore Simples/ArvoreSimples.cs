@@ -16,38 +16,38 @@ public class ArvoreSimples {
         this.tamanho++;
     }
     
-    public No root() { // rodando ok
+    public No root() { // raiz
         return this.raiz;
     }
     
-    public No parent(No v) { // rodando ok
+    public No parent(No v) {  // retornar o pai
         return v.GetPai();
     }
     
-    public IEnumerator children(No v) { //rodando ok
+    public IEnumerator children(No v) { // Iterar os filhos
         return v.filho();
     }
     
-    public bool isInternal(No v) { //rodando ok
+    public bool isInternal(No v) { // É nó interno?
         return (v.childrenNumber() > 0);
     }
     
-    public bool isExternal(No v) { //rodando ok
+    public bool isExternal(No v) { // É nó externo?
         return (v.childrenNumber() == 0);
     }
     
-    public bool isRoot(No v) { //ok rodando ok
+    public bool isRoot(No v) { // É nó raiz?
         return (v == this.raiz);
     }
     
-    public No addChild(No v, object o) { //rodando ok
+    public No addChild(No v, object o) { // Adicionado filho
         No novo = new No(v, o);
         v.addChild(novo);
         this.tamanho++;
         return novo;
     }
     
-    public object remove(No v) { //ok
+    public object remove(No v) { // removendo nó
         No pai = v.GetPai();
         if (((pai != null) || this.isExternal(v))) {
             pai.removeChild(v);
@@ -61,16 +61,18 @@ public class ArvoreSimples {
         return o;
     }
     
-    public void swapElements(No v, No w) { //implementar
-        //método exercício
+    public void swapElements(No v, No w) { // Trocando nós de posição
+        object aux = w.GetElem();
+        w.SetElement(v.GetElem());
+        v.SetElement(aux);
     }
     
-    public int depth(No v) { // rodando ok
+    public int depth(No v) { // retornando profundidade
         int profundidade = this.profundidade(v);
         return profundidade;
     }
     
-    private int profundidade(No v) { // rodando ok
+    private int profundidade(No v) { // private do depth
         if ((v == this.raiz)) {
             return 0;
         }
@@ -80,7 +82,7 @@ public class ArvoreSimples {
         
     }
     
-    public int height(No v) { //parcialmente rodando
+    public int height(No v) { // retornando altura
         if (isExternal(v)) {
             return 0;
         }else {
@@ -93,19 +95,19 @@ public class ArvoreSimples {
         }
     }
     
-    public IEnumerator elements() { //implementar
+    public IEnumerator elements() { // mostrar elementos
         a = new ArrayList();
         preOrderE(root());
         return a.GetEnumerator();
     }
     
-    public IEnumerator nos() { //implementar
+    public IEnumerator nos() { // mostra nós
         a = new ArrayList();
         preOrderN(root());
         return a.GetEnumerator();
     }
 
-    private void preOrderE(No v) {
+    private void preOrderE(No v) { //pre order de element
         No novo = v;
         a.Add(v.GetElem());           
         for (int i = 0; i < v.childrenNumber(); i++) {
@@ -114,7 +116,7 @@ public class ArvoreSimples {
         }
     }
 
-    public void preOrderN(No v) {
+    public void preOrderN(No v) { // pre order de nós
         No novo = v;
         a.Add(v);        
         for (int i = 0; i < v.childrenNumber(); i++) {
@@ -123,17 +125,18 @@ public class ArvoreSimples {
         }
     }
     
-    public int size() { // rodando ok
+    public int size() { // tamanho
         return tamanho;
     }
     
-    public bool isEmpty() { // rodando ok
+    public bool isEmpty() { // está vazio?
         return raiz.GetElem() == null;
     }
     
     public object replace(No v, object o) { //implementar
-      //método exercício 
-        return null;
+        object aux = v.GetElem();
+        v.SetElement(o); 
+        return aux;
     }
     
       public class No { //ok

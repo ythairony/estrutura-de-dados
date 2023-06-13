@@ -64,6 +64,9 @@ class Program {
     Console.WriteLine($"Profundidade a partir de chico = {paizao.depth(f4)}"); // 1
 
     Console.WriteLine($"Altura a partir do raiz é {paizao.height(paizao.root())}"); // 1
+
+    Console.WriteLine($"Trocando {paizao.replace(f4, "Francisco")}");
+    paizao.swapElements(neto2, f4); // trocando francisco com chico filho
     
     Console.WriteLine();
     //Pre Order 

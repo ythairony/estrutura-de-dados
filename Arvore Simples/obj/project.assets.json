@@ -1,38 +1,36 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {}
+    "net7.0": {}
   },
   "libraries": {},
   "projectFileDependencyGroups": {
-    "net5.0": []
+    "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\20222014040015\\.nuget\\packages\\": {}
+    "C:\\Users\\yurit\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\20222014040015\\Desktop\\projetos\\edl\\estrutura-de-dados\\Arvore Simples\\Arvore Simple.csproj",
+      "projectUniqueName": "C:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\Arvore Simples\\Arvore Simple.csproj",
       "projectName": "Arvore Simple",
-      "projectPath": "C:\\Users\\20222014040015\\Desktop\\projetos\\edl\\estrutura-de-dados\\Arvore Simples\\Arvore Simple.csproj",
-      "packagesPath": "C:\\Users\\20222014040015\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\20222014040015\\Desktop\\projetos\\edl\\estrutura-de-dados\\Arvore Simples\\obj\\",
+      "projectPath": "C:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\Arvore Simples\\Arvore Simple.csproj",
+      "packagesPath": "C:\\Users\\yurit\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\Arvore Simples\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\20222014040015\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\yurit\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
-        "net5.0"
+        "net7.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "projectReferences": {}
         }
       },
@@ -43,15 +41,16 @@
       }
     },
     "frameworks": {
-      "net5.0": {
-        "targetAlias": "net5.0",
+      "net7.0": {
+        "targetAlias": "net7.0",
         "imports": [
           "net461",
           "net462",
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -60,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }
