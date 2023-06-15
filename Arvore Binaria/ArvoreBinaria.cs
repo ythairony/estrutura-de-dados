@@ -6,6 +6,28 @@ public class ArvoreBinaria {
     int length = 0;
 
 
+    // Construtor    
+    public ArvoreBinaria(object elem) {
+        this.raiz = new Node(null, elem);
+        this.length++;
+    }
+
+    public int Tamanho() { // Tamanho
+        return length;
+    }
+
+    public bool EstaVazio() { // Está vazio?
+        return raiz.GetElem() == null;
+    }
+
+    public Node root() { // Retorna o raiz
+        return this.raiz;
+    }
+
+    public bool Eraiz(Node no) { // Verifica se é o raiz
+        return (no == this.raiz);
+    }
+
     public void SetComparator(Comparador c) {
 
     }
@@ -22,13 +44,13 @@ public class ArvoreBinaria {
         return null;
     }
 
-    public Node GetRaiz() {
-        return raiz;
-    }
+    // public Node GetRaiz() {
+    //     return raiz;
+    // }
 
-    public void SetRaiz() {
+    // public void SetRaiz() {
 
-    }
+    // }
 
     public void EmOrdem(Node no) {
 
@@ -55,19 +77,27 @@ public class ArvoreBinaria {
     }
 
     public IEnumerable Nos() {
-
+        return null;
     }
 
     public IEnumerator Elements() {
-
+        return null;
     }
 
-    public int Size() {
-
+    public Node FilhoDireito(Node pai) { // Falta testar
+        return pai.GetFilhoDireito();
     }
 
-    public bool EstaVazio() {
-        
+    public Node FilhoEsquerdo(Node pai) { // Falta testar
+        return pai.GetFilhoEsquerdo();
+    }
+
+    public bool TemFilhoDireito(Node pai) { // Falta testar
+        return pai.GetFilhoDireito() != null;
+    }
+
+    public bool TemFilhoEsquerdo(Node pai) { // Falta testar
+        return pai.GetFilhoEsquerdo() != null;
     }
 }
 
@@ -76,7 +106,18 @@ public class Comparador {
 }
 
 public class Node {
-    
+    private Node pai;
+    // private Node filhoDireito, filhoEsquerdo;
+    private object elem;
+
+    public Node(Node pai, object elem) {
+        this.pai = pai;
+        this.elem = elem;
+    }
+
+    public object GetElem() {
+        return this.elem;
+    }
     
     public Node GetFilhoDireito() {
         return null;
@@ -102,7 +143,8 @@ public class Node {
 
     }
 
-    public void SetChave(object key) {
-
+    public void SetElem(object key) {
+        this.elem = key;
     }
+
 }
