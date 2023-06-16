@@ -8,11 +8,11 @@ class Program {
         Console.WriteLine($"Tamanho = {pinheiro.Tamanho()}"); // tamanho 1
         Console.WriteLine($"10 é o raiz? {pinheiro.Eraiz(pinheiro.root())}"); // True
 
-        Node seis = pinheiro.Pesquisar(pinheiro.root(), 6);
-        Console.WriteLine($"FE de 10 {pinheiro.root().GetFilhoEsquerdo().GetElem()}"); // 6
-
-        Node dois = pinheiro.Pesquisar(pinheiro.root(), 2);
-        Console.WriteLine($"FE de 6 {seis.GetFilhoEsquerdo().GetElem()}"); // 6
-        
+        Node seis = pinheiro.Incluir(6);
+        Node dois = pinheiro.Incluir(2);
+        Node quatorze = pinheiro.Incluir(14);
+        Node dezenove = pinheiro.Incluir(19);
+        Node oito = pinheiro.Incluir(8);
+        Console.WriteLine($"Tamanho = {pinheiro.Tamanho()}"); // tamanho 6
     }
 }
