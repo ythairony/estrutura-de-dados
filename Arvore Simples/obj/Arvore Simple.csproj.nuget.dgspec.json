@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\Arvore Simples\\Arvore Simple.csproj": {}
+    "C:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\Arvore Simples\\Arvore Simple.csproj": {}
   },
   "projects": {
-    "c:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\Arvore Simples\\Arvore Simple.csproj": {
+    "C:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\Arvore Simples\\Arvore Simple.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\Arvore Simples\\Arvore Simple.csproj",
+        "projectUniqueName": "C:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\Arvore Simples\\Arvore Simple.csproj",
         "projectName": "Arvore Simple",
-        "projectPath": "c:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\Arvore Simples\\Arvore Simple.csproj",
+        "projectPath": "C:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\Arvore Simples\\Arvore Simple.csproj",
         "packagesPath": "C:\\Users\\yurit\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\Arvore Simples\\obj\\",
+        "outputPath": "C:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\Arvore Simples\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\yurit\\AppData\\Roaming\\NuGet\\NuGet.Config"

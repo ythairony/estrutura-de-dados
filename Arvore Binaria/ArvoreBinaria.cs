@@ -20,8 +20,8 @@ public class ArvoreBinaria {
         return length;
     }
 
-    public bool EstaVazio() { // Está vazio?
-        return raiz.GetElem() == null;
+    public bool EstaVazio(Node no) { // Está vazio?
+        return no == null;
     }
 
     public Node root() { // Retorna o raiz
@@ -33,11 +33,15 @@ public class ArvoreBinaria {
     }
 
     public Node Pesquisar(Node no, object obj) {
-        Node buscar = no;
-        if ((int)obj < (int)buscar.GetElem()) {
-
+        Node novo_no = new Node(no, obj);
+        if ((int)obj < (int)no.GetElem()) {
+            if (no.GetFilhoEsquerdo() == null) {
+                no.SetFilhoEsquerdo(novo_no);
+            } else {
+                Pesquisar(no, obj);
+            }
         }
-        return null;
+        return novo_no;
     }
 
     // public void SetComparator(Comparador c) {
@@ -118,8 +122,10 @@ public class Comparador {
 
 public class Node {
     private Node pai;
-    private Node filhoDireito, filhoEsquerdo;
+    private Node filhoDireito = null;
+    private Node filhoEsquerdo =  null;
     private object elem;
+    private int qntFilhos = 0;
 
     public Node(Node pai, object elem) {
         this.pai = pai;
@@ -138,16 +144,14 @@ public class Node {
         return filhoEsquerdo;
     }
 
-    public object GetChave() {
-        return null;
-    }
-
     public void SetFilhoDireito(Node fd) {
         this.filhoDireito = fd;
+        this.qntFilhos++;
     }
 
     public void SetFilhoEsquerdo(Node fe) {
         this.filhoEsquerdo = fe;
+        this.qntFilhos++;
     }
 
     public void SetPai(Node pai) {
