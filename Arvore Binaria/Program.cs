@@ -13,6 +13,13 @@ class Program {
         Node quatorze = pinheiro.Incluir(14);
         Node dezenove = pinheiro.Incluir(19);
         Node oito = pinheiro.Incluir(8);
-        Console.WriteLine($"Tamanho = {pinheiro.Tamanho()}"); // tamanho 6
+        Node tres = pinheiro.Incluir(3);
+        Node dezessete = pinheiro.Incluir(17);
+        Node vinte_um = pinheiro.Incluir(21);
+        Node um = pinheiro.Incluir(1);
+        Console.WriteLine($"Tamanho = {pinheiro.Tamanho()}"); // tamanho 10
+        Console.WriteLine($"Fundura do nó 6 = {pinheiro.Profundidade(seis)}"); // 1
+        Console.WriteLine(dezessete.GetPai().GetElem());
+        Console.WriteLine($"Fundura do nó 2 = {pinheiro.Profundidade(quatorze)}"); // 3
     }
 }

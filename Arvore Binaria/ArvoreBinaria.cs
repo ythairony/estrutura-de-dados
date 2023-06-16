@@ -52,7 +52,7 @@ public class ArvoreBinaria {
                 Pesquisar(no, obj);
             }
         }
-
+        novo_no.SetPai(no);
         return novo_no;
     }
 
@@ -78,7 +78,17 @@ public class ArvoreBinaria {
     }
 
     public int Profundidade(Node no) {
-        return 1;
+        int profundidade = this.Fundura(no);
+        return profundidade;
+    }
+
+    private int Fundura(Node no) {
+        if (no == raiz) {
+            return 0;
+        } 
+        else {
+            return (1 + this.Fundura(no.GetPai()));
+        }
     }
 
     public void Mostrar() {
@@ -149,7 +159,11 @@ public class Node {
     }
 
     public void SetPai(Node pai) {
+        this.pai = pai;
+    }
 
+    public Node GetPai() {
+        return pai;
     }
 
     public void SetElem(object key) {
