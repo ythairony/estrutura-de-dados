@@ -32,31 +32,27 @@ public class ArvoreBinaria {
         return (no == this.raiz);
     }
 
-    public void SetComparator(Comparador c) {
+    public Node Pesquisar(Node no, object obj) {
+        Node buscar = no;
+        if ((int)obj < (int)buscar.GetElem()) {
 
-    }
-
-    public int GetComparator() {
-        return 1;
-    }
-
-    public Node Pesquisar(Node no, object chave) {
+        }
         return null;
     }
 
-    public Node Incluir(Node pai, object elem) { // funcionando
-        Node novo = new Node(pai, elem);
-        if (TemFilhoEsquerdo(pai) == false) {
-            pai.SetFilhoEsquerdo(novo);
-        } 
-        else if (TemFilhoDireito(pai) == false) {
-            pai.SetFilhoDireito(novo);
-        } 
-        else {
-            throw new TadArvoreException($"{pai.GetElem()} já possui 2 filhos");
-        }
-        this.length++;
-        return novo;
+    // public void SetComparator(Comparador c) {
+
+    // }
+
+    // public int GetComparator() {
+
+    //     return 1;
+    // }
+
+
+    public Node Incluir(object elem) { 
+        Node novo_no = new Node(null, elem);
+        return novo_no;
     }
 
     // public Node GetRaiz() {
