@@ -1,6 +1,10 @@
 using System;
 using System.Collections;
 
+public class TadArvoreException : Exception {
+  public TadArvoreException(string message) : base(message) {}
+}
+
 public class ArvoreBinaria {
     Node raiz;
     int length = 0;
@@ -40,8 +44,19 @@ public class ArvoreBinaria {
         return null;
     }
 
-    public Node Incluir(object key) {
-        return null;
+    public Node Incluir(Node pai, object elem) { // funcionando
+        Node novo = new Node(pai, elem);
+        if (TemFilhoEsquerdo(pai) == false) {
+            pai.SetFilhoEsquerdo(novo);
+        } 
+        else if (TemFilhoDireito(pai) == false) {
+            pai.SetFilhoDireito(novo);
+        } 
+        else {
+            throw new TadArvoreException($"{pai.GetElem()} já possui 2 filhos");
+        }
+        this.length++;
+        return novo;
     }
 
     // public Node GetRaiz() {
@@ -93,11 +108,11 @@ public class ArvoreBinaria {
     }
 
     public bool TemFilhoDireito(Node pai) { // Falta testar
-        return pai.GetFilhoDireito() != null;
+        return (pai.GetFilhoDireito() != null);
     }
 
     public bool TemFilhoEsquerdo(Node pai) { // Falta testar
-        return pai.GetFilhoEsquerdo() != null;
+        return (pai.GetFilhoEsquerdo() != null);
     }
 }
 
@@ -107,7 +122,7 @@ public class Comparador {
 
 public class Node {
     private Node pai;
-    // private Node filhoDireito, filhoEsquerdo;
+    private Node filhoDireito, filhoEsquerdo;
     private object elem;
 
     public Node(Node pai, object elem) {
@@ -120,11 +135,11 @@ public class Node {
     }
     
     public Node GetFilhoDireito() {
-        return null;
+        return filhoDireito;
     } 
 
     public Node GetFilhoEsquerdo() {
-        return null;
+        return filhoEsquerdo;
     }
 
     public object GetChave() {
@@ -132,11 +147,11 @@ public class Node {
     }
 
     public void SetFilhoDireito(Node fd) {
-
+        this.filhoDireito = fd;
     }
 
     public void SetFilhoEsquerdo(Node fe) {
-        
+        this.filhoEsquerdo = fe;
     }
 
     public void SetPai(Node pai) {
