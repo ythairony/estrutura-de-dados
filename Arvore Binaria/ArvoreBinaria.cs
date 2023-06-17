@@ -32,7 +32,7 @@ public class ArvoreBinaria {
         return (no == this.raiz);
     }
 
-    private Node Pesquisar(Node no, object valor) { 
+    private Node Pesq(Node no, object valor) { 
         Node novo_no = new Node(no, valor); 
         if ((int)valor < (int)no.GetElem()) { 
             if (no.GetFilhoEsquerdo() == null) { 
@@ -40,7 +40,7 @@ public class ArvoreBinaria {
                 this.length++;
             } else {
                 no = no.GetFilhoEsquerdo(); 
-                Pesquisar(no, valor);  
+                Pesq(no, valor);  
             }
         }
         if ((int)valor < (int)no.GetElem()) { 
@@ -49,7 +49,7 @@ public class ArvoreBinaria {
                 this.length++;
             } else {
                 no = no.GetFilhoDireito(); 
-                Pesquisar(no, valor);
+                Pesq(no, valor);
             }
         }
         // novo_no.SetPai(no);
@@ -83,15 +83,16 @@ public class ArvoreBinaria {
         return novo_no;
     }
 
-    private Node Pesquisar1(Node no, object obj) { // implementado
+    private Node Pesquisar(Node no, object obj) { // implementado
         Node novo_no = new Node(no, obj);
         if ((int)obj < (int)no.GetElem()) {
             if (no.GetFilhoEsquerdo() == null) {
                 no.SetFilhoEsquerdo(novo_no);
                 this.length++;
             } else {
-                no = no.GetFilhoEsquerdo();
-                Pesquisar1(no, obj);
+                no.SetFilhoEsquerdo(Pesquisar(no.GetFilhoEsquerdo(), obj));
+                // no = no.GetFilhoEsquerdo();
+                // Pesquisar1(no, obj);
             }
         }
         if ((int)obj > (int)no.GetElem()) {
@@ -99,8 +100,9 @@ public class ArvoreBinaria {
                 no.SetFilhoDireito(novo_no);
                 this.length++;
             } else {
-                no = no.GetFilhoDireito();
-                Pesquisar1(no, obj);
+                no.SetFilhoDireito(Pesquisar(no.GetFilhoDireito(), obj));
+                // no = no.GetFilhoDireito();
+                // Pesquisar1(no, obj);
             }
         }
         novo_no.SetPai(no);
