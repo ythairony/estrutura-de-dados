@@ -32,7 +32,32 @@ public class ArvoreBinaria {
         return (no == this.raiz);
     }
 
-    private Node Pesquisar(Node no, object obj) {
+    private Node Pesquisar(Node no, object valor) { 
+        Node novo_no = new Node(no, valor); 
+        if ((int)valor < (int)no.GetElem()) { 
+            if (no.GetFilhoEsquerdo() == null) { 
+                no.GetFilhoEsquerdo().SetElem(valor);
+                this.length++;
+            } else {
+                no = no.GetFilhoEsquerdo(); 
+                Pesquisar(no, valor);  
+            }
+        }
+        if ((int)valor < (int)no.GetElem()) { 
+            if (no.GetFilhoDireito() == null) { 
+                no.SetFilhoDireito(novo_no); 
+                this.length++;
+            } else {
+                no = no.GetFilhoDireito(); 
+                Pesquisar(no, valor);
+            }
+        }
+        // novo_no.SetPai(no);
+        // novo_no.SetElem(valor);
+        return novo_no;
+    }
+
+    private Node Pesquisar2(Node no, object obj) {
         Node novo_no = new Node(no, obj);
         while ((int)obj < (int)no.GetElem()) {
             if (no.GetFilhoEsquerdo() == null) {
@@ -41,7 +66,7 @@ public class ArvoreBinaria {
                 break;
             } else {
                 no = no.GetFilhoEsquerdo();
-                Pesquisar(no, obj);
+                Pesquisar2(no, obj);
             }
         }
         while ((int)obj > (int)no.GetElem()) {
@@ -51,7 +76,7 @@ public class ArvoreBinaria {
                 break;
             } else {
                 no = no.GetFilhoDireito();
-                Pesquisar(no, obj);
+                Pesquisar2(no, obj);
             }
         }
         novo_no.SetPai(no);
@@ -66,7 +91,7 @@ public class ArvoreBinaria {
                 this.length++;
             } else {
                 no = no.GetFilhoEsquerdo();
-                Pesquisar(no, obj);
+                Pesquisar1(no, obj);
             }
         }
         if ((int)obj > (int)no.GetElem()) {
@@ -75,7 +100,7 @@ public class ArvoreBinaria {
                 this.length++;
             } else {
                 no = no.GetFilhoDireito();
-                Pesquisar(no, obj);
+                Pesquisar1(no, obj);
             }
         }
         novo_no.SetPai(no);
@@ -152,14 +177,16 @@ public class Comparador {
 
 public class Node {
     private Node pai;
-    private Node filhoDireito = null;
-    private Node filhoEsquerdo =  null;
+    private Node filhoDireito;
+    private Node filhoEsquerdo;
     private object elem;
     private int qntFilhos = 0;
 
     public Node(Node pai, object elem) {
         this.pai = pai;
         this.elem = elem;
+        this.filhoEsquerdo = null;
+        this.filhoDireito = null;
     }
 
     public object GetElem() {
