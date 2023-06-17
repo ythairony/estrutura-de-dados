@@ -18,8 +18,18 @@ class Program {
         Node vinte_um = pinheiro.Incluir(21);
         Node um = pinheiro.Incluir(1);
         Console.WriteLine($"Tamanho = {pinheiro.Tamanho()}"); // tamanho 10
-        Console.WriteLine($"Fundura do nó 6 = {pinheiro.Profundidade(seis)}"); // 1
-        Console.WriteLine(dezessete.GetPai().GetElem());
-        Console.WriteLine($"Fundura do nó 2 = {pinheiro.Profundidade(quatorze)}"); // 3
+        // Console.WriteLine($"Fundura do nó 6 = {pinheiro.Profundidade(seis)}"); // 1
+
+        // TESTE DE PATERNIDADE
+        Console.WriteLine(seis.GetPai().GetElem()); // 10
+        Console.WriteLine(dois.GetPai().GetElem()); // 6 - 2
+        Console.WriteLine(quatorze.GetPai().GetElem()); // 10
+        Console.WriteLine(dezenove.GetPai().GetElem()); // 14 - 19
+        Console.WriteLine(oito.GetPai().GetElem()); // 6 - 8
+        Console.WriteLine(tres.GetPai().GetElem()); // 2 - 3
+        Console.WriteLine(dezessete.GetPai().GetElem()); // 19 - 19
+        Console.WriteLine(vinte_um.GetPai().GetElem()); // 19 - 21
+        Console.WriteLine(um.GetPai().GetElem()); // 2 - 1
+        // Console.WriteLine($"Fundura do nó 2 = {pinheiro.Profundidade(quatorze)}"); // 3
     }
 }

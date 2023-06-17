@@ -32,7 +32,33 @@ public class ArvoreBinaria {
         return (no == this.raiz);
     }
 
-    private Node Pesquisar(Node no, object obj) { // implementado
+    private Node Pesquisar(Node no, object obj) {
+        Node novo_no = new Node(no, obj);
+        while ((int)obj < (int)no.GetElem()) {
+            if (no.GetFilhoEsquerdo() == null) {
+                no.SetFilhoEsquerdo(novo_no);
+                this.length++;
+                break;
+            } else {
+                no = no.GetFilhoEsquerdo();
+                Pesquisar(no, obj);
+            }
+        }
+        while ((int)obj > (int)no.GetElem()) {
+            if (no.GetFilhoDireito() == null) {
+                no.SetFilhoDireito(novo_no);
+                this.length++;
+                break;
+            } else {
+                no = no.GetFilhoDireito();
+                Pesquisar(no, obj);
+            }
+        }
+        novo_no.SetPai(no);
+        return novo_no;
+    }
+
+    private Node Pesquisar1(Node no, object obj) { // implementado
         Node novo_no = new Node(no, obj);
         if ((int)obj < (int)no.GetElem()) {
             if (no.GetFilhoEsquerdo() == null) {
