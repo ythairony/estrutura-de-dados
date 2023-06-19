@@ -32,85 +32,40 @@ public class ArvoreBinaria {
         return (no == this.raiz);
     }
 
-    private Node Pesq(Node no, object valor) { 
-        Node novo_no = new Node(no, valor); 
-        if ((int)valor < (int)no.GetElem()) { 
-            if (no.GetFilhoEsquerdo() == null) { 
-                no.GetFilhoEsquerdo().SetElem(valor);
-                this.length++;
-            } else {
-                no = no.GetFilhoEsquerdo(); 
-                Pesq(no, valor);  
-            }
-        }
-        if ((int)valor < (int)no.GetElem()) { 
-            if (no.GetFilhoDireito() == null) { 
-                no.SetFilhoDireito(novo_no); 
-                this.length++;
-            } else {
-                no = no.GetFilhoDireito(); 
-                Pesq(no, valor);
-            }
-        }
-        // novo_no.SetPai(no);
-        // novo_no.SetElem(valor);
-        return novo_no;
+    // public bool Interno(Node no) { // Verifica se é interno
+    //     return no.GetQntFilhos() > 0 ;
+    // }
+
+    public bool Externo(Node no) { // Verifica se é externo
+        return no.GetFilhoEsquerdo() == null && no.GetFilhoDireito() == null;
     }
 
-    private Node Pesquisar2(Node no, object obj) {
-        Node novo_no = new Node(no, obj);
-        while ((int)obj < (int)no.GetElem()) {
-            if (no.GetFilhoEsquerdo() == null) {
-                no.SetFilhoEsquerdo(novo_no);
-                this.length++;
-                break;
-            } else {
-                no = no.GetFilhoEsquerdo();
-                Pesquisar2(no, obj);
-            }
-        }
-        while ((int)obj > (int)no.GetElem()) {
-            if (no.GetFilhoDireito() == null) {
-                no.SetFilhoDireito(novo_no);
-                this.length++;
-                break;
-            } else {
-                no = no.GetFilhoDireito();
-                Pesquisar2(no, obj);
-            }
-        }
-        novo_no.SetPai(no);
-        return novo_no;
-    }
-
-    private Node Pesquisar(Node no, object obj) { // implementado
-        Node novo_no = new Node(no, obj);
+    private Node Pesquisar(Node no, object obj) { // Rodando
         if ((int)obj < (int)no.GetElem()) {
-            if (no.GetFilhoEsquerdo() == null) {
-                no.SetFilhoEsquerdo(novo_no);
-                this.length++;
-            } else {
-                no.SetFilhoEsquerdo(Pesquisar(no.GetFilhoEsquerdo(), obj));
-                // no = no.GetFilhoEsquerdo();
-                // Pesquisar1(no, obj);
+            if(no.GetFilhoEsquerdo()!=null){
+                return Pesquisar(no.GetFilhoEsquerdo(), obj);
+            }else{
+                return no;
+            }
+        } else if ((int)obj == (int)no.GetElem()) {
+            return no;
+        } else {
+            if(no.GetFilhoDireito()!=null){
+                return Pesquisar(no.GetFilhoDireito(), obj);
+            }else{
+                return no;
             }
         }
-        if ((int)obj > (int)no.GetElem()) {
-            if (no.GetFilhoDireito() == null) {
-                no.SetFilhoDireito(novo_no);
-                this.length++;
-            } else {
-                no.SetFilhoDireito(Pesquisar(no.GetFilhoDireito(), obj));
-                // no = no.GetFilhoDireito();
-                // Pesquisar1(no, obj);
-            }
-        }
-        novo_no.SetPai(no);
-        return novo_no;
     }
 
-    public Node Incluir(object elem) { // Implementado 
-        Node novo_no = Pesquisar(raiz, elem);
+    public Node Incluir(object elem) { // Inserindo elementos 
+        Node pai = Pesquisar(raiz, elem);
+        Node novo_no = new Node(pai, elem);
+        if ((int)elem < (int)pai.GetElem()) {
+            pai.SetFilhoEsquerdo(novo_no);
+        } else {
+            pai.SetFilhoDireito(novo_no);
+        }
         return novo_no;
     }
 
@@ -126,11 +81,25 @@ public class ArvoreBinaria {
         
     }
 
-    public int Altura(Node no) {
-        return 1;
+    public int Altura(Node no) { // Retorna a altura
+        if (Externo(no)) {
+            return 0;
+        } else {
+            int altura = 0;
+            int altura_filho; 
+            if (no.GetFilhoEsquerdo() != null) {
+                altura_filho = Altura(no.GetFilhoEsquerdo());
+                altura = Math.Max(altura, altura_filho);
+            } 
+            if (no.GetFilhoDireito() != null) {
+                altura_filho = Altura(no.GetFilhoDireito());
+                altura = Math.Max(altura, altura_filho);
+            }
+            return altura + 1;
+        }
     }
 
-    public int Profundidade(Node no) {
+    public int Profundidade(Node no) { // retorna a fundura
         int profundidade = this.Fundura(no);
         return profundidade;
     }
@@ -156,39 +125,21 @@ public class ArvoreBinaria {
         return null;
     }
 
-    public Node FilhoDireito(Node pai) { // Falta testar
-        return pai.GetFilhoDireito();
+    public object Remove(object elem) {
+        return elem;
     }
-
-    public Node FilhoEsquerdo(Node pai) { // Falta testar
-        return pai.GetFilhoEsquerdo();
-    }
-
-    public bool TemFilhoDireito(Node pai) { // Falta testar
-        return (pai.GetFilhoDireito() != null);
-    }
-
-    public bool TemFilhoEsquerdo(Node pai) { // Falta testar
-        return (pai.GetFilhoEsquerdo() != null);
-    }
-}
-
-public class Comparador {
-
 }
 
 public class Node {
     private Node pai;
-    private Node filhoDireito;
-    private Node filhoEsquerdo;
+    private Node filhoDireito = null;
+    private Node filhoEsquerdo = null;
     private object elem;
     private int qntFilhos = 0;
 
     public Node(Node pai, object elem) {
         this.pai = pai;
         this.elem = elem;
-        this.filhoEsquerdo = null;
-        this.filhoDireito = null;
     }
 
     public object GetElem() {
@@ -223,6 +174,10 @@ public class Node {
 
     public void SetElem(object key) {
         this.elem = key;
+    }
+
+    public int GetQntFilhos() {
+        return qntFilhos;
     }
 
 }

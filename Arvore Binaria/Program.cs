@@ -22,14 +22,16 @@ class Program {
 
         // TESTE DE PATERNIDADE
         Console.WriteLine(seis.GetPai().GetElem()); // 10
-        Console.WriteLine(dois.GetPai().GetElem()); // 6 - 2
+        Console.WriteLine(dois.GetPai().GetElem()); // 6
         Console.WriteLine(quatorze.GetPai().GetElem()); // 10
-        Console.WriteLine(dezenove.GetPai().GetElem()); // 14 - 19
-        Console.WriteLine(oito.GetPai().GetElem()); // 6 - 8
-        Console.WriteLine(tres.GetPai().GetElem()); // 2 - 3
-        Console.WriteLine(dezessete.GetPai().GetElem()); // 19 - 19
-        Console.WriteLine(vinte_um.GetPai().GetElem()); // 19 - 21
-        Console.WriteLine(um.GetPai().GetElem()); // 2 - 1
-        // Console.WriteLine($"Fundura do nó 2 = {pinheiro.Profundidade(quatorze)}"); // 3
+        Console.WriteLine(dezenove.GetPai().GetElem()); // 14
+        Console.WriteLine(oito.GetPai().GetElem()); // 6
+        Console.WriteLine(tres.GetPai().GetElem()); // 2
+        Console.WriteLine(dezessete.GetPai().GetElem()); // 19
+        Console.WriteLine(vinte_um.GetPai().GetElem()); // 19
+        Console.WriteLine(um.GetPai().GetElem()); // 2
+        Console.WriteLine($"Fundura = {pinheiro.Profundidade(dezenove)}"); // 3
+
+        Console.WriteLine($"Altura = {pinheiro.Altura(oito)}"); // 3
     }
 }
