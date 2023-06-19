@@ -8,6 +8,7 @@ public class TadArvoreException : Exception {
 public class ArvoreBinaria {
     Node raiz;
     int length = 0;
+    private ArrayList print;
 
 
     // Construtor    
@@ -24,7 +25,7 @@ public class ArvoreBinaria {
         return no == null;
     }
 
-    public Node root() { // Retorna o raiz
+    public Node Root() { // Retorna o raiz
         return this.raiz;
     }
 
@@ -32,9 +33,9 @@ public class ArvoreBinaria {
         return (no == this.raiz);
     }
 
-    // public bool Interno(Node no) { // Verifica se é interno
-    //     return no.GetQntFilhos() > 0 ;
-    // }
+    public bool Interno(Node no) { // Verifica se é interno
+        return no.GetFilhoEsquerdo() != null || no.GetFilhoDireito() != null ;
+    }
 
     public bool Externo(Node no) { // Verifica se é externo
         return no.GetFilhoEsquerdo() == null && no.GetFilhoDireito() == null;
@@ -69,16 +70,41 @@ public class ArvoreBinaria {
         return novo_no;
     }
 
-    public void EmOrdem(Node no) {
-
+    public void EmOrdem(Node no) { // Ordena da esquerda pra direita
+        if(Interno(no)) {
+            if(no.GetFilhoEsquerdo() != null) {
+                EmOrdem(no.GetFilhoEsquerdo());
+            }
+        }
+        print.Add(no.GetElem());
+        if(Interno(no)) {
+            EmOrdem(no.GetFilhoDireito());
+        }
     }
 
-    public void PreOrdem(Node no) {
-        
+    public void PreOrdem(Node no) { // Visita e segue pro próximo
+        print.Add(no);
+        if(Interno(no)) {
+            if(no.GetFilhoEsquerdo() != null) {
+                PreOrdem(no.GetFilhoEsquerdo());
+            }
+        }
+        if(Interno(no)) {
+            PreOrdem(no.GetFilhoDireito());
+        }
     }
 
-    public void PosOrdem(Node no) {
-        
+    public void PosOrdem(Node no) { // Segue pro próxim e dps visita
+        if(Interno(no)) {
+            if(no.GetFilhoEsquerdo() != null) {
+                PosOrdem(no.GetFilhoEsquerdo());
+            }
+        }
+        if(Interno(no)) {
+            PosOrdem(no.GetFilhoDireito());
+        }
+        print.Add(no.GetElem());
+
     }
 
     public int Altura(Node no) { // Retorna a altura
@@ -104,7 +130,7 @@ public class ArvoreBinaria {
         return profundidade;
     }
 
-    private int Fundura(Node no) {
+    private int Fundura(Node no) { // entrega a fundura pra profundidade
         if (no == raiz) {
             return 0;
         } 
@@ -117,12 +143,16 @@ public class ArvoreBinaria {
 
     }
 
-    public IEnumerable Nos() {
-        return null;
+    public IEnumerator Nos() { // printa os nós
+        print = new ArrayList();
+        PreOrdem(raiz);
+        return print.GetEnumerator();
     }
 
-    public IEnumerator Elements() {
-        return null;
+    public IEnumerator Elements() { // printa os elementos 
+        print = new ArrayList();
+        EmOrdem(raiz);
+        return print.GetEnumerator();
     }
 
     public object Remove(object elem) {

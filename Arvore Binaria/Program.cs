@@ -6,7 +6,7 @@ class Program {
         ArvoreBinaria pinheiro = new ArvoreBinaria(10);
         
         Console.WriteLine($"Tamanho = {pinheiro.Tamanho()}"); // tamanho 1
-        Console.WriteLine($"10 é o raiz? {pinheiro.Eraiz(pinheiro.root())}"); // True
+        Console.WriteLine($"10 é o raiz? {pinheiro.Eraiz(pinheiro.Root())}"); // True
 
         Node seis = pinheiro.Incluir(6);
         Node dois = pinheiro.Incluir(2);
@@ -33,5 +33,30 @@ class Program {
         Console.WriteLine($"Fundura = {pinheiro.Profundidade(dezenove)}"); // 3
 
         Console.WriteLine($"Altura = {pinheiro.Altura(oito)}"); // 3
+
+        Console.WriteLine(pinheiro.Interno(oito)); // false
+        Console.WriteLine(pinheiro.Interno(dois)); // true
+
+        Console.WriteLine(pinheiro.Externo(oito)); // true
+        Console.WriteLine(pinheiro.Externo(dois)); // false
+
+        Console.WriteLine();
+        Console.WriteLine("PRINT ELEMENTOS");
+        IEnumerator elementos = pinheiro.Elements();
+        int i = 1;
+        while (elementos.MoveNext()) {
+            Console.WriteLine($"{i}º elemento da árvore -> {elementos.Current}");
+            i++;
+        }
+
+        Console.WriteLine();
+        Console.WriteLine("PRINT NÓS");
+        IEnumerator nos = pinheiro.Nos();
+        int j = 1;
+        while (nos.MoveNext()) {
+            Console.WriteLine($"{j}º elemento da árvore -> {nos.Current}");
+            j++;
+        }
+
     }
 }
