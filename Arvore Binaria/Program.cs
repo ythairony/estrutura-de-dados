@@ -8,6 +8,7 @@ class Program {
         Console.WriteLine($"Tamanho = {pinheiro.Tamanho()}"); // tamanho 1
         Console.WriteLine($"10 é o raiz? {pinheiro.Eraiz(pinheiro.Root())}"); // True
 
+        // INSERÇÕES
         Node seis = pinheiro.Incluir(6);
         Node dois = pinheiro.Incluir(2);
         Node quatorze = pinheiro.Incluir(14);
@@ -18,7 +19,6 @@ class Program {
         Node vinte_um = pinheiro.Incluir(21);
         Node um = pinheiro.Incluir(1);
         Console.WriteLine($"Tamanho = {pinheiro.Tamanho()}"); // tamanho 10
-        // Console.WriteLine($"Fundura do nó 6 = {pinheiro.Profundidade(seis)}"); // 1
 
         // TESTE DE PATERNIDADE
         Console.WriteLine(seis.GetPai().GetElem()); // 10
@@ -30,16 +30,21 @@ class Program {
         Console.WriteLine(dezessete.GetPai().GetElem()); // 19
         Console.WriteLine(vinte_um.GetPai().GetElem()); // 19
         Console.WriteLine(um.GetPai().GetElem()); // 2
-        Console.WriteLine($"Fundura = {pinheiro.Profundidade(dezenove)}"); // 3
 
+        // TESTE DE FUNDURA E ALTURA    
+        Console.WriteLine($"Fundura = {pinheiro.Profundidade(dezenove)}"); // 3
         Console.WriteLine($"Altura = {pinheiro.Altura(oito)}"); // 3
 
+        // TESTE NÓ INTERNO OU EXTERNO
         Console.WriteLine(pinheiro.Interno(oito)); // false
         Console.WriteLine(pinheiro.Interno(dois)); // true
-
         Console.WriteLine(pinheiro.Externo(oito)); // true
         Console.WriteLine(pinheiro.Externo(dois)); // false
 
+        
+
+
+        // TESTE ELEMENTS()
         Console.WriteLine();
         Console.WriteLine("PRINT ELEMENTOS");
         IEnumerator elementos = pinheiro.Elements();
@@ -49,6 +54,7 @@ class Program {
             i++;
         }
 
+        // TESTE NOS()
         Console.WriteLine();
         Console.WriteLine("PRINT NÓS");
         IEnumerator nos = pinheiro.Nos();
@@ -58,5 +64,10 @@ class Program {
             j++;
         }
 
+        // MOSTRAR ÁRVORE
+        // pinheiro.Mostrar();
+
+        // TESTE REMOVE
+        Console.WriteLine($"Removido o elemento -> {pinheiro.Remove(8)}");
     }
 }

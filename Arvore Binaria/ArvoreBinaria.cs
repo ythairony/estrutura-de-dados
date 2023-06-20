@@ -43,7 +43,7 @@ public class ArvoreBinaria {
 
     private Node Pesquisar(Node no, object obj) { // Rodando
         if ((int)obj < (int)no.GetElem()) {
-            if(no.GetFilhoEsquerdo()!=null){
+            if(ComparadorEsquerdo(no)){
                 return Pesquisar(no.GetFilhoEsquerdo(), obj);
             }else{
                 return no;
@@ -51,7 +51,7 @@ public class ArvoreBinaria {
         } else if ((int)obj == (int)no.GetElem()) {
             return no;
         } else {
-            if(no.GetFilhoDireito()!=null){
+            if(ComparadorDireito(no)){
                 return Pesquisar(no.GetFilhoDireito(), obj);
             }else{
                 return no;
@@ -139,9 +139,14 @@ public class ArvoreBinaria {
         }
     }
 
-    public void Mostrar() {
+    // public void Mostrar() {
+    //     int eixoX, eixoY;
+    //     eixoX = (int)Math.Pow(2, (Altura(raiz)) + 1) - 1;
+    //     eixoY = Altura(raiz);
+    //     // Console.WriteLine(eixoX);
+    //     // Console.WriteLine(eixoY);
 
-    }
+    // }
 
     public IEnumerator Nos() { // printa os nós
         print = new ArrayList();
@@ -156,9 +161,31 @@ public class ArvoreBinaria {
     }
 
     public object Remove(object elem) {
+        Node no = Pesquisar(raiz, elem);
+        Node pai = no.GetPai();
+        Console.WriteLine($"No {no.GetElem()}");
+        Console.WriteLine($"Pai {no.GetPai().GetElem()}");
+        if (Externo(no)) {
+            if (pai.GetFilhoEsquerdo().Equals(no)) {
+                pai.SetFilhoEsquerdo(null);
+            } else if (pai.GetFilhoDireito().Equals(no)) {
+                pai.SetFilhoDireito(null);
+            }
+        }
+        Console.WriteLine($"FE {pai.GetFilhoEsquerdo() == null}");
+        Console.WriteLine($"FD {pai.GetFilhoDireito() == null}");
         return elem;
     }
+
+    public bool ComparadorEsquerdo(Node no) { // comparador esquerdo
+        return no.GetFilhoEsquerdo() != null;
+    }
+
+    public bool ComparadorDireito(Node no) { // comparador direito
+        return no.GetFilhoDireito() != null;
+    }
 }
+
 
 public class Node {
     private Node pai;
