@@ -67,6 +67,7 @@ public class ArvoreBinaria {
         } else {
             pai.SetFilhoDireito(novo_no);
         }
+        length++;
         return novo_no;
     }
 
@@ -78,7 +79,23 @@ public class ArvoreBinaria {
         }
         print.Add(no.GetElem());
         if(Interno(no)) {
-            EmOrdem(no.GetFilhoDireito());
+            if(no.GetFilhoDireito() != null) {
+                EmOrdem(no.GetFilhoDireito());
+            }
+        }
+    }
+
+    public void EmOrdem2(Node no) { // Ordena da esquerda pra direita
+        if(Interno(no)) {
+            if(no.GetFilhoEsquerdo() != null) {
+                EmOrdem2(no.GetFilhoEsquerdo());
+            }
+        }
+        print.Add(no);
+        if(Interno(no)) {
+            if(no.GetFilhoDireito() != null) {
+                EmOrdem2(no.GetFilhoDireito());
+            }
         }
     }
 
@@ -139,14 +156,16 @@ public class ArvoreBinaria {
         }
     }
 
-    // public void Mostrar() {
-    //     int eixoX, eixoY;
-    //     eixoX = (int)Math.Pow(2, (Altura(raiz)) + 1) - 1;
-    //     eixoY = Altura(raiz);
-    //     // Console.WriteLine(eixoX);
-    //     // Console.WriteLine(eixoY);
-
-    // }
+    public void Mostrar() {
+        int[,] matriz = new int[Altura(raiz)+1, length];
+        print = new ArrayList();
+        EmOrdem2(raiz);
+        // Console.WriteLine(Altura(raiz)+1);
+        // Console.WriteLine(length);
+        for (int i = 0; i < length; i++) {
+            // matriz[Profundidade((Node)print[i]),i] = print[i];
+        }
+    }
 
     public IEnumerator Nos() { // printa os nós
         print = new ArrayList();
