@@ -163,7 +163,7 @@ public class ArvoreBinaria {
         // Console.WriteLine(Altura(raiz)+1);
         // Console.WriteLine(length);
         for (int i = 0; i < length; i++) {
-            // matriz[Profundidade((Node)print[i]),i] = print[i];
+            // matriz[Profundidade(print[i]),i] = print[i];
         }
     }
 
