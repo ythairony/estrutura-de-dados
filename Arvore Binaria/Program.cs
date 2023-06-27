@@ -15,6 +15,9 @@ class Program {
         Node dezessete = pinheiro.Incluir(17);
         Node vinte_um = pinheiro.Incluir(21);
         Node um = pinheiro.Incluir(1);
+
+        // TESTE REMOVE
+        // Console.WriteLine($"Removido o elemento -> {pinheiro.Remove(21)}");
  
         // TESTE ELEMENTS()
         Console.WriteLine();
@@ -26,8 +29,6 @@ class Program {
             i++;
         }
 
-        // TESTE REMOVE
-        // Console.WriteLine($"Removido o elemento -> {pinheiro.Remove(8)}");
 
         // TESTE MOSTRAR
         pinheiro.Mostrar();
