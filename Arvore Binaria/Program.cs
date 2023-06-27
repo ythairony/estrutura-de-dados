@@ -15,9 +15,12 @@ class Program {
         Node dezessete = pinheiro.Incluir(17);
         Node vinte_um = pinheiro.Incluir(21);
         Node um = pinheiro.Incluir(1);
-
+        Node quadro = pinheiro.Incluir(4);
+        Node vinto = pinheiro.Incluir(20);
+        Node dezoito = pinheiro.Incluir(18);
+        
         // TESTE REMOVE
-        // Console.WriteLine($"Removido o elemento -> {pinheiro.Remove(21)}");
+        // Console.WriteLine($"Removido o elemento -> {pinheiro.Remove(8)}");
  
         // TESTE ELEMENTS()
         Console.WriteLine();
@@ -29,6 +32,8 @@ class Program {
             i++;
         }
 
+        // TESTE PROXIMO
+        pinheiro.Proximo(dezenove);
 
         // TESTE MOSTRAR
         pinheiro.Mostrar();

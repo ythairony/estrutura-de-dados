@@ -85,16 +85,16 @@ public class ArvoreBinaria {
         }
     }
 
-    public void EmOrdem2(Node no) { // Ordena da esquerda pra direita
+    private void Matriz(Node no) { // Ordena da esquerda pra direita
         if(Interno(no)) {
             if(no.GetFilhoEsquerdo() != null) {
-                EmOrdem2(no.GetFilhoEsquerdo());
+                Matriz(no.GetFilhoEsquerdo());
             }
         }
         print.Add(no);
         if(Interno(no)) {
             if(no.GetFilhoDireito() != null) {
-                EmOrdem2(no.GetFilhoDireito());
+                Matriz(no.GetFilhoDireito());
             }
         }
     }
@@ -159,7 +159,7 @@ public class ArvoreBinaria {
     public void Mostrar() {
         object[,] matriz = new object[Altura(raiz)+1, length];
         print = new ArrayList();
-        EmOrdem2(raiz);
+        Matriz(raiz);
         // Console.WriteLine(Altura(raiz)+1);
         // Console.WriteLine(length);
         for (int i = 0; i < length; i++) {
@@ -202,12 +202,24 @@ public class ArvoreBinaria {
             } else if (pai.GetFilhoDireito().Equals(no)) {
                 pai.SetFilhoDireito(null);
             }
-        // } else if (Interno(no)) {
-        //     if (pai.GetFilhoEsquerdo().Equals(no)) {
-
-        //     }
+        } else if (Interno(no)) { // parei aqui
+            if (pai.GetFilhoDireito().Equals(null)) {
+                pai.SetFilhoEsquerdo(null);
+            }
         }
+        this.length--;
         return elem;
+    }
+
+    public Node Proximo(Node no) {
+        print = new ArrayList();
+        Matriz(raiz);
+        for (int i = 0; i < length; i++) {
+            if (no.Equals(print[i])) {
+                no = (Node)print[i+1];
+            }
+        }
+        return no;
     }
 
     public bool ComparadorEsquerdo(Node no) { // comparador esquerdo
