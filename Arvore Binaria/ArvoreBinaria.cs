@@ -157,14 +157,27 @@ public class ArvoreBinaria {
     }
 
     public void Mostrar() {
-        int[,] matriz = new int[Altura(raiz)+1, length];
+        object[,] matriz = new object[Altura(raiz)+1, length];
         print = new ArrayList();
         EmOrdem2(raiz);
         // Console.WriteLine(Altura(raiz)+1);
         // Console.WriteLine(length);
         for (int i = 0; i < length; i++) {
             // int linha = Fundura(print[i]);
-            // matriz[Profundidade(print[i]),i] = print[i];
+            object o = ((Node)print[i]).GetElem();
+            matriz[Profundidade((Node)print[i]),i] = o;
+        }
+        for (int i = 0; i < Altura(raiz)+1; i++) {
+            for (int j = 0; j < length; j++) {
+                if (matriz[i,j] == null) {
+                    Console.Write(" ");
+                } else {
+                    Console.Write(matriz[i,j]);
+                }
+                if (j == length - 1) {
+                    Console.WriteLine();
+                }
+            }
         }
     }
 
@@ -183,8 +196,6 @@ public class ArvoreBinaria {
     public object Remove(object elem) {
         Node no = Pesquisar(raiz, elem);
         Node pai = no.GetPai();
-        // Console.WriteLine($"No {no.GetElem()}");
-        // Console.WriteLine($"Pai {no.GetPai().GetElem()}");
         if (Externo(no)) {
             if (pai.GetFilhoEsquerdo().Equals(no)) {
                 pai.SetFilhoEsquerdo(null);
@@ -196,8 +207,6 @@ public class ArvoreBinaria {
 
         //     }
         }
-        // Console.WriteLine($"FE {pai.GetFilhoEsquerdo() == null}");
-        // Console.WriteLine($"FD {pai.GetFilhoDireito() == null}");
         return elem;
     }
 
