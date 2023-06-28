@@ -196,27 +196,47 @@ public class ArvoreBinaria {
     public object Remove(object elem) {
         Node no = Pesquisar(raiz, elem);
         Node pai = no.GetPai();
-        if (Externo(no)) {
+        if (Externo(no)) { // Se o nó for folha, descobre qual que lado ele é filho e anula ele
             if (pai.GetFilhoEsquerdo().Equals(no)) {
                 pai.SetFilhoEsquerdo(null);
             } else if (pai.GetFilhoDireito().Equals(no)) {
                 pai.SetFilhoDireito(null);
             }
         } else if (Interno(no)) { // parei aqui
-            if (pai.GetFilhoDireito().Equals(null)) {
-                pai.SetFilhoEsquerdo(null);
+            if (no.GetFilhoDireito() == null) {
+                if (Externo(no.GetFilhoEsquerdo())) {
+                    no.SetElem(no.GetFilhoEsquerdo().GetElem());
+                    no.SetFilhoEsquerdo(null);
+                }
+            } else {
+                Node proximo = Proximo(no);
+                no.SetElem(proximo.GetElem());
+                if (SouFilhoDireito(proximo)){
+                    proximo.GetPai().SetFilhoDireito(null);
+                } else if (SouFilhoEsquerdo(proximo)) {
+                    proximo.GetPai().SetFilhoEsquerdo(null);
+                }
             }
-        }
+        } 
         this.length--;
         return elem;
     }
 
-    public Node Proximo(Node no) {
+    private bool SouFilhoDireito(Node filho) {
+        return filho.GetPai().GetFilhoDireito() == filho;
+    } 
+
+    private bool SouFilhoEsquerdo(Node filho) {
+        return filho.GetPai().GetFilhoEsquerdo() == filho;
+    }
+
+    private Node Proximo(Node no) {
         print = new ArrayList();
         Matriz(raiz);
         for (int i = 0; i < length; i++) {
             if (no.Equals(print[i])) {
                 no = (Node)print[i+1];
+                break;
             }
         }
         return no;

@@ -18,9 +18,10 @@ class Program {
         Node quadro = pinheiro.Incluir(4);
         Node vinto = pinheiro.Incluir(20);
         Node dezoito = pinheiro.Incluir(18);
+        Node sete = pinheiro.Incluir(7);
         
         // TESTE REMOVE
-        // Console.WriteLine($"Removido o elemento -> {pinheiro.Remove(8)}");
+        Console.WriteLine($"Removido o elemento -> {pinheiro.Remove(6)}");
  
         // TESTE ELEMENTS()
         Console.WriteLine();
@@ -32,8 +33,6 @@ class Program {
             i++;
         }
 
-        // TESTE PROXIMO
-        pinheiro.Proximo(dezenove);
 
         // TESTE MOSTRAR
         pinheiro.Mostrar();
