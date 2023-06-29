@@ -202,14 +202,14 @@ public class ArvoreBinaria {
             } else if (pai.GetFilhoDireito().Equals(no)) {
                 pai.SetFilhoDireito(null);
             }
-        } else if (Interno(no)) { // parei aqui
+        } else if (Interno(no)) { // Se não houver filho direito
             if (no.GetFilhoDireito() == null) {
                 if (Externo(no.GetFilhoEsquerdo())) {
                     no.SetElem(no.GetFilhoEsquerdo().GetElem());
                     no.SetFilhoEsquerdo(null);
                 }
             } else {
-                Node proximo = Proximo(no);
+                Node proximo = Proximo(no); // se houver filho direito
                 no.SetElem(proximo.GetElem());
                 if (SouFilhoDireito(proximo)){
                     proximo.GetPai().SetFilhoDireito(null);
