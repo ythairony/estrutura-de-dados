@@ -14,7 +14,7 @@ public class Heap {
     }
 
     public object Min() {
-
+        return 1;
     }
 
     public object Key(Node node) {
@@ -26,7 +26,7 @@ public class Heap {
     }
 
     public Node Insert(Node node, object key) {
-
+        return node;
     }
 
     public object RemoveMin() {

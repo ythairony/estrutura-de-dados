@@ -202,14 +202,23 @@ public class ArvoreBinaria {
             } else if (pai.GetFilhoDireito().Equals(no)) {
                 pai.SetFilhoDireito(null);
             }
-        } else if (Interno(no)) { // Se não houver filho direito
-            if (no.GetFilhoDireito() == null) {
+        } else if (Interno(no) && no.GetQntFilhos() == 1) { // Se não houver filho direito, esquerco sobe
+            if (no.GetFilhoDireito() == null) { 
                 if (Externo(no.GetFilhoEsquerdo())) {
                     no.SetElem(no.GetFilhoEsquerdo().GetElem());
                     no.SetFilhoEsquerdo(null);
                 }
-            } else {
-                Node proximo = Proximo(no); // se houver filho direito
+            } else if (no.GetFilhoEsquerdo() == null) { // Se houver apenas o filho direito, sobe o nó
+                no.GetFilhoDireito().SetPai(no.GetPai());
+                no = no.GetFilhoDireito();
+                if (pai.GetFilhoEsquerdo().GetElem().Equals(elem)) {
+                    pai.SetFilhoEsquerdo(no);
+                } else {
+                    pai.SetFilhoDireito(no);
+                }
+            }
+        } else if (Interno(no) && no.GetQntFilhos() == 2) { // Se tiver dois filhos, pega o próximo nó
+                Node proximo = Proximo(no);
                 no.SetElem(proximo.GetElem());
                 if (SouFilhoDireito(proximo)){
                     proximo.GetPai().SetFilhoDireito(null);
@@ -217,7 +226,6 @@ public class ArvoreBinaria {
                     proximo.GetPai().SetFilhoEsquerdo(null);
                 }
             }
-        } 
         this.length--;
         return elem;
     }

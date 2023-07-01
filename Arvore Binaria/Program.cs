@@ -14,14 +14,14 @@ class Program {
         Node tres = pinheiro.Incluir(3);
         Node dezessete = pinheiro.Incluir(17);
         Node vinte_um = pinheiro.Incluir(21);
-        Node um = pinheiro.Incluir(1);
+        // Node um = pinheiro.Incluir(1);
         Node quadro = pinheiro.Incluir(4);
         Node vinto = pinheiro.Incluir(20);
         Node dezoito = pinheiro.Incluir(18);
         Node sete = pinheiro.Incluir(7);
         
         // TESTE REMOVE
-        Console.WriteLine($"Removido o elemento -> {pinheiro.Remove(6)}");
+        Console.WriteLine($"Removido o elemento -> {pinheiro.Remove(2)}");
  
         // TESTE ELEMENTS()
         Console.WriteLine();
