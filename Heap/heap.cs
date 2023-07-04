@@ -25,7 +25,7 @@ public class Heap {
     }
 
     public object Min() {
-        return 1;
+        return root.GetKey();
     }
 
     public object Key(Node node) {
@@ -37,20 +37,26 @@ public class Heap {
     }
 
     public Node Insert(object key) {
-        Node parent = NextNode(root);
-        Node new_node = new Node(parent, key);
+        Node new_last_node = NextNode();
+        Node new_node = new Node(new_last_node, key);
+        last_node = new_node;
         return new_node;
     }
 
-    private Node NextNode(Node node) {
-        Node parent = node.GetParent();
-        if (parent.GetLeftChild().Equals(node) || IsRoot(parent)) {
-            node = parent.GetRightChild();
-            return node;
-        } else {
-            NextNode(node.GetParent());
+    private Node NextNode() {
+        Node atual = last_node;
+        while (!IsRoot(atual) && atual.GetParent().GetRightChild().Equals(atual)) {
+            atual = atual.GetParent();
         }
-        return node;
+        if (IsRoot(atual)) {
+            atual = atual.GetRightChild();
+        } else {
+            atual = atual.GetParent().GetRightChild();
+        }
+        while (atual.GetLeftChild() != null) {
+            atual = atual.GetLeftChild();
+        }
+        return atual;
     }
 
     public object RemoveMin() {
