@@ -2,15 +2,28 @@
 // CLASS HEAP
 public class Heap {
 
-    Node raiz;
-    private int len;
+    Node root;
+    Node last_node;
+    private int len = 0;
+
+    public Heap() {}
+
+    public Heap(object key) {
+        this.root = new Node(null, key);
+        this.len++;
+        this.last_node = root;
+    }
 
     public int Size() {
         return len;
     }
 
     public bool IsEmpty() {
-        return true;
+        return len == 0;
+    }
+    
+    public bool IsRoot(Node node) {
+        return node == root;
     }
 
     public object Min() {
@@ -25,12 +38,25 @@ public class Heap {
         return node.GetValue();
     }
 
-    public Node Insert(Node node, object key) {
+    public Node Insert(object key) {
+        Node parent = NextNode(root);
+        Node new_node = new Node(parent, key);
+        return new_node;
+    }
+
+    private Node NextNode(Node node) {
+        Node parent = node.GetParent();
+        if (parent.GetLeftChild().Equals(node) || IsRoot(parent)) {
+            node = parent.GetRightChild();
+            return node;
+        } else {
+            NextNode(node.GetParent());
+        }
         return node;
     }
 
     public object RemoveMin() {
-        return raiz.GetKey();
+        return root.GetKey();
     }
 
     // PERGUNTAR SOBRE COMPARADOR 
@@ -47,10 +73,10 @@ public class Node {
     private object key;
     private object value;
 
-    public Node(Node parent, object key, object value) {
+    public Node(Node parent, object key) {
         this.parent = parent;
         this.key = key;
-        this.value = value;
+        this.value = key;
     }
 
     public object GetKey() {
@@ -71,5 +97,10 @@ public class Node {
 
     public Node GetRightChild() {
         return rightChild;
+    }
+
+    public void SetKey(object key) {
+        this.key = key;
+        this.value = key;
     }
 }
