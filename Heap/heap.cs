@@ -6,8 +6,6 @@ public class Heap {
     Node last_node;
     private int len = 0;
 
-    public Heap() {}
-
     public Heap(object key) {
         this.root = new Node(null, key);
         this.len++;
@@ -68,8 +66,8 @@ public class Heap {
 // CLASS NODE 
 public class Node {
     private Node parent;
-    private Node leftChild;
-    private Node rightChild;
+    private Node leftChild = null;
+    private Node rightChild = null;
     private object key;
     private object value;
 
