@@ -37,19 +37,27 @@ public class Heap {
     }
 
     public Node Insert(object key) {
-        Node new_last_node = NextNode();
-        Node new_node = new Node(new_last_node, key);
+        Node old_last_node = NextNode();
+        Node new_node = new Node(old_last_node, key);
+        if (old_last_node.GetChildren() == 0) {
+            old_last_node.SetLeftChild(new_node);
+            old_last_node.AddChildren();
+        } else if (old_last_node.GetChildren() == 1) {
+            old_last_node.SetRightChild(new_node);
+            old_last_node.AddChildren();
+        }
         last_node = new_node;
         return new_node;
     }
 
     private Node NextNode() {
         Node atual = last_node;
+        
         while (!IsRoot(atual) && atual.GetParent().GetRightChild().Equals(atual)) {
             atual = atual.GetParent();
         }
         if (IsRoot(atual)) {
-            atual = atual.GetRightChild();
+            atual = root; // Alterei para que returne a própria raiz.
         } else {
             atual = atual.GetParent().GetRightChild();
         }
@@ -74,6 +82,7 @@ public class Node {
     private Node parent;
     private Node leftChild = null;
     private Node rightChild = null;
+    private int children = 0;
     private object key;
     private object value;
 
@@ -103,8 +112,24 @@ public class Node {
         return rightChild;
     }
 
+    public int GetChildren() {
+        return children;
+    }
+
     public void SetKey(object key) {
         this.key = key;
         this.value = key;
+    }
+
+    public void SetLeftChild(Node node) {
+        this.leftChild = node;
+    }
+    
+    public void SetRightChild(Node node) {
+        this.rightChild = node;
+    }
+
+    public void AddChildren() {
+        this.children++;
     }
 }
