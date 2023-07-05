@@ -37,14 +37,14 @@ public class Heap {
     }
 
     public Node Insert(object key) {
-        Node old_last_node = NextNode();
-        Node new_node = new Node(old_last_node, key);
-        if (old_last_node.GetChildren() == 0) {
-            old_last_node.SetLeftChild(new_node);
-            old_last_node.AddChildren();
-        } else if (old_last_node.GetChildren() == 1) {
-            old_last_node.SetRightChild(new_node);
-            old_last_node.AddChildren();
+        Node new_last_node = NextNode();
+        Node new_node = new Node(new_last_node, key);
+        if (new_last_node.GetChildren() == 0) {
+            new_last_node.SetLeftChild(new_node);
+            new_last_node.AddChildren();
+        } else if (new_last_node.GetChildren() == 1) {
+            new_last_node.SetRightChild(new_node);
+            new_last_node.AddChildren();
         }
         last_node = new_node;
         return new_node;
@@ -53,7 +53,7 @@ public class Heap {
     private Node NextNode() {
         Node atual = last_node;
         
-        while (!IsRoot(atual) && atual.GetParent().GetRightChild().Equals(atual)) {
+        while (!IsRoot(atual) && atual.GetParent().GetRightChild() == null) {
             atual = atual.GetParent();
         }
         if (IsRoot(atual)) {
