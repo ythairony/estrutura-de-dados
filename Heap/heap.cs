@@ -37,28 +37,32 @@ public class Heap {
     }
 
     public Node Insert(object key) {
-        Node new_last_node = NextNode();
-        Node new_node = new Node(new_last_node, key);
-        if (new_last_node.GetChildren() == 0) {
-            new_last_node.SetLeftChild(new_node);
-            new_last_node.AddChildren();
-        } else if (new_last_node.GetChildren() == 1) {
-            new_last_node.SetRightChild(new_node);
-            new_last_node.AddChildren();
+        Node parent = NextNode();
+        Node new_node = new Node(parent, key);
+        if (parent.GetChildren() == 0) {
+            parent.SetLeftChild(new_node);
+            parent.AddChildren();
+        } else if (parent.GetChildren() == 1) {
+            parent.SetRightChild(new_node);
+            parent.AddChildren();
         }
-        last_node = new_node;
+        this.last_node = new_node;
         return new_node;
     }
 
     private Node NextNode() {
         Node atual = last_node;
         
-        while (!IsRoot(atual) && atual.GetParent().GetRightChild() == null) {
-            atual = atual.GetParent();
-        }
         if (IsRoot(atual)) {
-            atual = root; // Alterei para que returne a própria raiz.
-        } else {
+            atual = root;
+            return atual;
+        }
+
+        while (!IsRoot(atual) || atual.GetParent().GetRightChild() == null) {
+            atual = atual.GetParent();
+            if (IsRoot(atual)) { break; }
+        }
+        if (!IsRoot(atual)) {
             atual = atual.GetParent().GetRightChild();
         }
         while (atual.GetLeftChild() != null) {
