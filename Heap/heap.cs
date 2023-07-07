@@ -12,43 +12,77 @@ public class Heap {
         this.last_node = root;
     }
 
+
     public int Size() {
         return len;
     }
+
 
     public bool IsEmpty() {
         return len == 0;
     }
     
+    // TESTE COM A Height
+    // public bool IsExternal(Node node) {
+    //     return node.GetLeftChild() == null && node.GetRightChild() == null;
+    // }
+
+    // public int Height(Node no) { // Retorna a Height
+    //     if (IsExternal(no)) {
+    //         return 0;
+    //     } else {
+    //         int height = 0;
+    //         int child_height; 
+    //         if (no.GetLeftChild() != null) {
+    //             child_height = Height(no.GetLeftChild());
+    //             height = Math.Max(height, child_height);
+    //         } 
+    //         if (no.GetRightChild() != null) {
+    //             child_height = Height(no.GetRightChild());
+    //             height = Math.Max(height, child_height);
+    //         }
+    //         return height + 1;
+    //     }
+    // }
+
     public bool IsRoot(Node node) {
         return node == root;
     }
+
 
     public object Min() {
         return root.GetKey();
     }
 
+
     public object Key(Node node) {
         return node.GetKey();
     }
+
 
     public object Value(Node node) {
         return node.GetValue();
     }
 
+
     public Node Insert(object key) {
-        Node parent = NextNode();
-        Node new_node = new Node(parent, key);
-        if (parent.GetChildren() == 0) {
-            parent.SetLeftChild(new_node);
-            parent.AddChildren();
-        } else if (parent.GetChildren() == 1) {
-            parent.SetRightChild(new_node);
-            parent.AddChildren();
+        Node old_last_node = NextNode();
+        Node new_node;
+
+        if (!IsRoot(old_last_node) && old_last_node.GetParent().GetRightChild() == null) {
+            new_node = new Node(old_last_node.GetParent(), key);
+            old_last_node.GetParent().SetRightChild(new_node);
+        } else {
+            new_node = new Node(old_last_node, key);
+            old_last_node.SetLeftChild(new_node);
         }
+
+        old_last_node.AddChildren(); // questionável esse atributo
         this.last_node = new_node;
+        this.len++;
         return new_node;
     }
+
 
     private Node NextNode() {
         Node atual = last_node;
@@ -60,16 +94,26 @@ public class Heap {
 
         while (!IsRoot(atual) || atual.GetParent().GetRightChild() == null) {
             atual = atual.GetParent();
-            if (IsRoot(atual)) { break; }
+
+            if (IsRoot(atual)) { 
+                break; 
+            } 
         }
+
         if (!IsRoot(atual)) {
             atual = atual.GetParent().GetRightChild();
-        }
+        } 
+        // else if (Height(atual) - Height(atual.GetRightChild()) == 2) { // problema tá aqui
+        //     atual = atual.GetRightChild();
+        // }
+
         while (atual.GetLeftChild() != null) {
             atual = atual.GetLeftChild();
         }
+
         return atual;
     }
+
 
     public object RemoveMin() {
         return root.GetKey();
