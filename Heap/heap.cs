@@ -22,28 +22,32 @@ public class Heap {
         return len == 0;
     }
     
-    // TESTE COM A Height
-    // public bool IsExternal(Node node) {
-    //     return node.GetLeftChild() == null && node.GetRightChild() == null;
-    // }
+    //TESTE COM A Height
+    public bool IsExternal(Node node) {
+        return node.GetLeftChild() == null && node.GetRightChild() == null;
+    }
 
-    // public int Height(Node no) { // Retorna a Height
-    //     if (IsExternal(no)) {
-    //         return 0;
-    //     } else {
-    //         int height = 0;
-    //         int child_height; 
-    //         if (no.GetLeftChild() != null) {
-    //             child_height = Height(no.GetLeftChild());
-    //             height = Math.Max(height, child_height);
-    //         } 
-    //         if (no.GetRightChild() != null) {
-    //             child_height = Height(no.GetRightChild());
-    //             height = Math.Max(height, child_height);
-    //         }
-    //         return height + 1;
-    //     }
-    // }
+    public Node Root() {
+        return root;
+    }
+
+    public int Height(Node no) { // Retorna a Height
+        if (IsExternal(no)) {
+            return 0;
+        } else {
+            int height = 0;
+            int child_height; 
+            if (no.GetLeftChild() != null) {
+                child_height = Height(no.GetLeftChild());
+                height = Math.Max(height, child_height);
+            } 
+            if (no.GetRightChild() != null) {
+                child_height = Height(no.GetRightChild());
+                height = Math.Max(height, child_height);
+            }
+            return height + 1;
+        }
+    }
 
     public bool IsRoot(Node node) {
         return node == root;
@@ -81,6 +85,23 @@ public class Heap {
         this.last_node = new_node;
         this.len++;
         return new_node;
+    }
+
+
+    private void SwapKeys(Node node1, Node node2) {
+        object aux = node1.GetKey();
+        node1.SetKey(node2.GetKey());
+        node2.SetKey(aux);
+    }
+
+
+    private void UpHeap(Node node) {
+
+    }
+
+
+    private void DownHeap(Node node) {
+
     }
 
 

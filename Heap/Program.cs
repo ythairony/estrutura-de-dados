@@ -8,12 +8,14 @@ class Program {
         Node tres = h.Insert(3);
         Node doze = h.Insert(12);
         Node onze = h.Insert(11);
-        Node trinta = h.Insert(33);
+        Node trinta = h.Insert(30);
         Console.WriteLine($"O pai de 1 é {um.GetParent().GetKey()}"); // 10
         Console.WriteLine($"O pai de 3 é {tres.GetParent().GetKey()}"); // 10
         Console.WriteLine($"O pai de 12 é {doze.GetParent().GetKey()}"); // 1
         Console.WriteLine($"O pai de 11 é {onze.GetParent().GetKey()}"); // 1
         Console.WriteLine($"O pai de 33 é {trinta.GetParent().GetKey()}"); // 3
+        // Console.WriteLine($"Altura do raiz = {h.Height(h.Root())}");
+        // Console.WriteLine($"Altura do 3 = {h.Height(tres)}");
 
     }
 }
