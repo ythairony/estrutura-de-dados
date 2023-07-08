@@ -50,7 +50,7 @@ public class Heap {
     }
 
     public bool IsRoot(Node node) {
-        return node == root;
+        return node.Equals(root);
     }
 
 
@@ -69,8 +69,15 @@ public class Heap {
     }
 
 
+    private void SwapKeys(Node node1, Node node2) {
+        object aux = node1.GetKey();
+        node1.SetKey(node2.GetKey());
+        node2.SetKey(aux);
+    }
+
+
     public Node Insert(object key) {
-        Node old_last_node = NextNode();
+        Node old_last_node = NextNode2();
         Node new_node;
 
         if (!IsRoot(old_last_node) && old_last_node.GetParent().GetRightChild() == null) {
@@ -81,17 +88,10 @@ public class Heap {
             old_last_node.SetLeftChild(new_node);
         }
 
-        old_last_node.AddChildren(); // questionável esse atributo
+        // old_last_node.AddChildren(); // questionável esse atributo
         this.last_node = new_node;
         this.len++;
         return new_node;
-    }
-
-
-    private void SwapKeys(Node node1, Node node2) {
-        object aux = node1.GetKey();
-        node1.SetKey(node2.GetKey());
-        node2.SetKey(aux);
     }
 
 
@@ -100,12 +100,7 @@ public class Heap {
     }
 
 
-    private void DownHeap(Node node) {
-
-    }
-
-
-    private Node NextNode() {
+    private Node NextNode2() {
         Node atual = last_node;
         
         if (IsRoot(atual)) {
@@ -124,7 +119,7 @@ public class Heap {
         if (!IsRoot(atual)) {
             atual = atual.GetParent().GetRightChild();
         } 
-        // else if (Height(atual) - Height(atual.GetRightChild()) == 2) { // problema tá aqui
+        // else if (atual.GetRightChild() != null) { // problema tá aqui
         //     atual = atual.GetRightChild();
         // }
 
@@ -135,9 +130,64 @@ public class Heap {
         return atual;
     }
 
+    private Node NextNode1() {
+        Node novo = last_node;
+        if (IsRoot(novo) && novo.GetLeftChild() == null) {
+            return novo;
+        } 
+
+        while (!IsRoot(novo) || novo.GetParent().GetRightChild() == null) {
+            novo = novo.GetParent();
+
+            if (IsRoot(novo) && novo.GetRightChild() != null) {
+                novo = novo.GetRightChild(); 
+                break;
+            } else if (IsRoot(novo)) {
+                return novo;
+            } 
+        }
+
+        // if (IsRoot(novo) && novo.GetRightChild() != null) {
+        //     novo = novo.GetRightChild();
+        // } 
+
+        while (novo.GetLeftChild() != null) {
+            novo = novo.GetLeftChild();
+        }
+        return novo;
+    }
+
+    
+    private Node NextNode() {
+        Node atual = last_node;
+
+        if (IsRoot(atual)) { return atual; }
+
+        while (!atual.GetParent().GetLeftChild().Equals(atual) || !IsRoot(atual)) {
+            atual = atual.GetParent();
+
+            if (IsRoot(atual)) { break; }
+        }
+        
+        if (atual.GetParent().GetLeftChild().Equals(atual)) {
+            atual = atual.GetParent().GetRightChild();
+        }
+
+         while (atual.GetLeftChild() != null) {
+            atual = atual.GetLeftChild();
+        }
+
+        return atual;
+    }
+
 
     public object RemoveMin() {
         return root.GetKey();
+    }
+
+
+    private void DownHeap(Node node) {
+
     }
 
     // PERGUNTAR SOBRE COMPARADOR 
@@ -151,7 +201,7 @@ public class Node {
     private Node parent;
     private Node leftChild = null;
     private Node rightChild = null;
-    private int children = 0;
+    // private int children = 0;
     private object key;
     private object value;
 
@@ -181,9 +231,9 @@ public class Node {
         return rightChild;
     }
 
-    public int GetChildren() {
-        return children;
-    }
+    // public int GetChildren() {
+    //     return children;
+    // }
 
     public void SetKey(object key) {
         this.key = key;
@@ -198,7 +248,7 @@ public class Node {
         this.rightChild = node;
     }
 
-    public void AddChildren() {
-        this.children++;
-    }
+    // public void AddChildren() {
+    //     this.children++;
+    // }
 }
