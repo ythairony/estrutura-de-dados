@@ -1,0 +1,82 @@
+public Node Insert(object key) {
+        Node old_last_node = NextNode();
+        Node new_node;
+
+        // if (!IsRoot(old_last_node) && old_last_node.GetParent().GetRightChild() == null) {
+        //     new_node = new Node(old_last_node.GetParent(), key);
+        //     old_last_node.GetParent().SetRightChild(new_node);
+        // } else {
+        //     new_node = new Node(old_last_node, key);
+        //     old_last_node.SetLeftChild(new_node);
+        // }
+
+        new_node = new Node(old_last_node, key);
+
+        if (old_last_node.GetLeftChild() == null) {
+            old_last_node.SetLeftChild(new_node);
+        } else {
+            old_last_node.SetRightChild(new_node);
+        }
+
+        // UpHeap(new_node); // fazer o UpHead
+        this.last_node = new_node;
+        this.len++;
+        return new_node;
+    }
+
+   private Node NextNode2() {
+        Node atual = last_node;
+        
+        if (IsRoot(atual)) {
+            atual = root;
+            return atual;
+        }
+
+        while (!IsRoot(atual) || atual.GetParent().GetRightChild() == null) {
+            atual = atual.GetParent();
+
+            if (IsRoot(atual)) { 
+                break; 
+            } 
+        }
+
+        if (!IsRoot(atual)) {
+            atual = atual.GetParent().GetRightChild();
+        } 
+        // else if (atual.GetRightChild() != null) { // problema tá aqui
+        //     atual = atual.GetRightChild();
+        // }
+
+        while (atual.GetLeftChild() != null) {
+            atual = atual.GetLeftChild();
+        }
+
+        return atual;
+    }
+
+    private Node NextNode1() {
+        Node novo = last_node;
+        if (IsRoot(novo) && novo.GetLeftChild() == null) {
+            return novo;
+        } 
+
+        while (!IsRoot(novo) || novo.GetParent().GetRightChild() == null) {
+            novo = novo.GetParent();
+
+            if (IsRoot(novo) && novo.GetRightChild() != null) {
+                novo = novo.GetRightChild(); 
+                break;
+            } else if (IsRoot(novo)) {
+                return novo;
+            } 
+        }
+
+        // if (IsRoot(novo) && novo.GetRightChild() != null) {
+        //     novo = novo.GetRightChild();
+        // } 
+
+        while (novo.GetLeftChild() != null) {
+            novo = novo.GetLeftChild();
+        }
+        return novo;
+    }

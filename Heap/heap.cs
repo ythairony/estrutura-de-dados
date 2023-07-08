@@ -77,18 +77,16 @@ public class Heap {
 
 
     public Node Insert(object key) {
-        Node old_last_node = NextNode2();
-        Node new_node;
+        Node old_last_node = NextNode();
+        Node new_node = new Node(old_last_node, key);
 
-        if (!IsRoot(old_last_node) && old_last_node.GetParent().GetRightChild() == null) {
-            new_node = new Node(old_last_node.GetParent(), key);
-            old_last_node.GetParent().SetRightChild(new_node);
-        } else {
-            new_node = new Node(old_last_node, key);
+        if (old_last_node.GetLeftChild() == null) {
             old_last_node.SetLeftChild(new_node);
+        } else {
+            old_last_node.SetRightChild(new_node);
         }
 
-        // old_last_node.AddChildren(); // questionável esse atributo
+        // UpHeap(new_node); // fazer o UpHead
         this.last_node = new_node;
         this.len++;
         return new_node;
@@ -96,84 +94,30 @@ public class Heap {
 
 
     private void UpHeap(Node node) {
-
-    }
-
-
-    private Node NextNode2() {
-        Node atual = last_node;
-        
-        if (IsRoot(atual)) {
-            atual = root;
-            return atual;
+        while ((int)node.GetKey() < (int)node.GetParent().GetKey()) {
+            SwapKeys(node, node.GetParent());
         }
-
-        while (!IsRoot(atual) || atual.GetParent().GetRightChild() == null) {
-            atual = atual.GetParent();
-
-            if (IsRoot(atual)) { 
-                break; 
-            } 
-        }
-
-        if (!IsRoot(atual)) {
-            atual = atual.GetParent().GetRightChild();
-        } 
-        // else if (atual.GetRightChild() != null) { // problema tá aqui
-        //     atual = atual.GetRightChild();
-        // }
-
-        while (atual.GetLeftChild() != null) {
-            atual = atual.GetLeftChild();
-        }
-
-        return atual;
-    }
-
-    private Node NextNode1() {
-        Node novo = last_node;
-        if (IsRoot(novo) && novo.GetLeftChild() == null) {
-            return novo;
-        } 
-
-        while (!IsRoot(novo) || novo.GetParent().GetRightChild() == null) {
-            novo = novo.GetParent();
-
-            if (IsRoot(novo) && novo.GetRightChild() != null) {
-                novo = novo.GetRightChild(); 
-                break;
-            } else if (IsRoot(novo)) {
-                return novo;
-            } 
-        }
-
-        // if (IsRoot(novo) && novo.GetRightChild() != null) {
-        //     novo = novo.GetRightChild();
-        // } 
-
-        while (novo.GetLeftChild() != null) {
-            novo = novo.GetLeftChild();
-        }
-        return novo;
     }
 
     
     private Node NextNode() {
         Node atual = last_node;
 
-        if (IsRoot(atual)) { return atual; }
-
-        while (!atual.GetParent().GetLeftChild().Equals(atual) || !IsRoot(atual)) {
-            atual = atual.GetParent();
-
-            if (IsRoot(atual)) { break; }
+        if (IsRoot(atual)) {
+            return atual;
         }
-        
-        if (atual.GetParent().GetLeftChild().Equals(atual)) {
+
+        while (!IsRoot(atual) && !atual.GetParent().GetLeftChild().Equals(atual)) { // enquanto não for filho esquerdo ou raiz, atualiza com o pai
+            atual = atual.GetParent();
+        }
+
+        if (!IsRoot(atual) && atual.GetParent().GetRightChild() == null) { // se ele tiver chegado num irmão único, retorna o pai para inserir
+            return atual.GetParent();
+        } else if (!IsRoot(atual) && atual.GetParent().GetRightChild() != null) { // se tiver irmão direito, atualiza com o mesmo
             atual = atual.GetParent().GetRightChild();
         }
 
-         while (atual.GetLeftChild() != null) {
+        while (atual.GetLeftChild() != null) { //Vai descendo pelo irmão esquerdo
             atual = atual.GetLeftChild();
         }
 
@@ -201,7 +145,6 @@ public class Node {
     private Node parent;
     private Node leftChild = null;
     private Node rightChild = null;
-    // private int children = 0;
     private object key;
     private object value;
 
@@ -211,44 +154,44 @@ public class Node {
         this.value = key;
     }
 
+
     public object GetKey() {
         return key;
     }
+
 
     public object GetValue() {
         return value;
     }
 
+
     public Node GetParent() {
         return parent;
     }
+
 
     public Node GetLeftChild() {
         return leftChild;
     }
 
+
     public Node GetRightChild() {
         return rightChild;
     }
 
-    // public int GetChildren() {
-    //     return children;
-    // }
 
     public void SetKey(object key) {
         this.key = key;
         this.value = key;
     }
 
+
     public void SetLeftChild(Node node) {
         this.leftChild = node;
     }
+
     
     public void SetRightChild(Node node) {
         this.rightChild = node;
     }
-
-    // public void AddChildren() {
-    //     this.children++;
-    // }
 }
