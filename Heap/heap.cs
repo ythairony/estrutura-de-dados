@@ -1,3 +1,4 @@
+using System.Collections;
 
 // CLASS HEAP
 public class Heap {
@@ -5,6 +6,11 @@ public class Heap {
     Node root;
     Node last_node;
     private int len = 0;
+
+    //Apagar dps
+    public object GetLastNode() {
+        return last_node.GetKey();
+    }
 
     public Heap(object key) {
         this.root = new Node(null, key);
@@ -22,32 +28,99 @@ public class Heap {
         return len == 0;
     }
     
-    //TESTE COM A Height
-    public bool IsExternal(Node node) {
-        return node.GetLeftChild() == null && node.GetRightChild() == null;
-    }
 
     public Node Root() {
         return root;
     }
 
-    public int Height(Node no) { // Retorna a Height
-        if (IsExternal(no)) {
-            return 0;
-        } else {
-            int height = 0;
-            int child_height; 
-            if (no.GetLeftChild() != null) {
-                child_height = Height(no.GetLeftChild());
-                height = Math.Max(height, child_height);
-            } 
-            if (no.GetRightChild() != null) {
-                child_height = Height(no.GetRightChild());
-                height = Math.Max(height, child_height);
+
+    // MOSTRAR
+    private ArrayList print;
+
+    public bool Externo(Node no) { // Verifica se é externo
+        return no.GetLeftChild() == null && no.GetRightChild() == null;
+    }
+
+
+    public bool Interno(Node no) { // Verifica se é interno
+        return no.GetLeftChild() != null || no.GetRightChild() != null ;
+    }
+
+
+    public void Mostrar() {
+        object[,] matriz = new object[Altura(root)+1, len];
+        print = new ArrayList();
+        Matriz(root);
+        for (int i = 0; i < len; i++) {
+            // int linha = Fundura(print[i]);
+            object o = ((Node)print[i]).GetKey();
+            matriz[Profundidade((Node)print[i]),i] = o;
+        }
+        for (int i = 0; i < Altura(root)+1; i++) {
+            for (int j = 0; j < len; j++) {
+                if (matriz[i,j] == null) {
+                    Console.Write(" ");
+                } else {
+                    Console.Write(matriz[i,j]);
+                }
+                if (j == len - 1) {
+                    Console.WriteLine();
+                }
             }
-            return height + 1;
         }
     }
+
+
+    public int Altura(Node no) { // Retorna a altura
+        if (Externo(no)) {
+            return 0;
+        } else {
+            int altura = 0;
+            int altura_filho; 
+            if (no.GetLeftChild() != null) {
+                altura_filho = Altura(no.GetLeftChild());
+                altura = Math.Max(altura, altura_filho);
+            } 
+            if (no.GetRightChild() != null) {
+                altura_filho = Altura(no.GetRightChild());
+                altura = Math.Max(altura, altura_filho);
+            }
+            return altura + 1;
+        }
+    }
+
+
+    public int Profundidade(Node no) { // retorna a fundura
+        int profundidade = this.Fundura(no);
+        return profundidade;
+    }
+
+
+    private int Fundura(Node no) { // entrega a fundura pra profundidade
+        if (no == root) {
+            return 0;
+        } 
+        else {
+            return (1 + this.Fundura(no.GetParent()));
+        }
+    }
+
+
+    private void Matriz(Node no) { // Ordena da esquerda pra direita
+        if(Interno(no)) {
+            if(no.GetLeftChild() != null) {
+                Matriz(no.GetLeftChild());
+            }
+        }
+        print.Add(no);
+        if(Interno(no)) {
+            if(no.GetRightChild() != null) {
+                Matriz(no.GetRightChild());
+            }
+        }
+    }
+    // ACABOU O MOSTRAR
+
 
     public bool IsRoot(Node node) {
         return node.Equals(root);
@@ -86,7 +159,7 @@ public class Heap {
             old_last_node.SetRightChild(new_node);
         }
 
-        // UpHeap(new_node); // fazer o UpHead
+        UpHeap(new_node); // fazer o UpHead
         this.last_node = new_node;
         this.len++;
         return new_node;
@@ -94,7 +167,7 @@ public class Heap {
 
 
     private void UpHeap(Node node) {
-        while ((int)node.GetKey() < (int)node.GetParent().GetKey()) {
+        while (!IsRoot(node) && (int)node.GetKey() < (int)node.GetParent().GetKey()) {
             SwapKeys(node, node.GetParent());
             node = node.GetParent();
         }
@@ -108,7 +181,7 @@ public class Heap {
             return atual;
         }
 
-        while (!IsRoot(atual) && !atual.GetParent().GetLeftChild().Equals(atual)) { // enquanto não for filho esquerdo ou raiz, atualiza com o pai
+        while (!IsRoot(atual) && !atual.GetParent().GetLeftChild().Equals(atual)) { // enquanto não for filho esquerdo ou root, atualiza com o pai
             atual = atual.GetParent();
         }
 
@@ -129,7 +202,16 @@ public class Heap {
     public object RemoveMin() {
         object print = root.GetKey();
         SwapKeys(root, last_node);
+        Node new_last_node = NewLastNode();
 
+        if (last_node.GetParent().GetRightChild() == null) {
+            last_node.GetParent().SetLeftChild(null);
+        } else {
+            last_node.GetParent().SetRightChild(null);
+        }
+
+        this.len--;
+        this.last_node = new_last_node;
         
         return print;
     }
@@ -142,7 +224,7 @@ public class Heap {
             return atual;
         }
 
-        while (!IsRoot(atual) && !atual.GetParent().GetRightChild().Equals(atual)) { // enquanto não for filho esquerdo ou raiz, atualiza com o pai
+        while (!IsRoot(atual) && atual.GetParent().GetRightChild() == null) { // enquanto não for filho esquerdo ou root, atualiza com o pai
             atual = atual.GetParent();
         }
 
@@ -160,9 +242,8 @@ public class Heap {
     }
 
 
-    private void DownHeap(Node node) {
-        // se for menor que os filhos ou ele for folha, para
-        // senão 
+    private void DownHeap() {
+        
     }
 
 
