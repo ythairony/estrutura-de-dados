@@ -27,6 +27,7 @@ class Program {
         Console.WriteLine($"O pai de 122 é {a122.GetParent().GetKey()}"); // 12
         Console.WriteLine($"O pai de 311 é {b311.GetParent().GetKey()}"); // 31
         Console.WriteLine(h.Root().GetKey());
+        h.RemoveMin();
 
 
     }

@@ -96,6 +96,7 @@ public class Heap {
     private void UpHeap(Node node) {
         while ((int)node.GetKey() < (int)node.GetParent().GetKey()) {
             SwapKeys(node, node.GetParent());
+            node = node.GetParent();
         }
     }
 
@@ -126,16 +127,44 @@ public class Heap {
 
 
     public object RemoveMin() {
-        return root.GetKey();
+        object print = root.GetKey();
+        SwapKeys(root, last_node);
+
+        
+        return print;
+    }
+
+
+    private Node NewLastNode() {
+        Node atual = last_node;
+
+        if (IsRoot(atual)) {
+            return atual;
+        }
+
+        while (!IsRoot(atual) && !atual.GetParent().GetRightChild().Equals(atual)) { // enquanto não for filho esquerdo ou raiz, atualiza com o pai
+            atual = atual.GetParent();
+        }
+
+        if (!IsRoot(atual) && atual.GetParent().GetLeftChild() == null) { // se ele tiver chegado num irmão único, retorna o pai para inserir
+            return atual.GetParent();
+        } else if (!IsRoot(atual) && atual.GetParent().GetLeftChild() != null) { // se tiver irmão direito, atualiza com o mesmo
+            atual = atual.GetParent().GetLeftChild();
+        }
+
+        while (atual.GetRightChild() != null) { //Vai descendo pelo irmão esquerdo
+            atual = atual.GetRightChild();
+        }
+
+        return atual;
     }
 
 
     private void DownHeap(Node node) {
-
+        // se for menor que os filhos ou ele for folha, para
+        // senão 
     }
 
-    // PERGUNTAR SOBRE COMPARADOR 
-    // PERGUNTAR SOBRE ORDENAÇÃO DA FILA 'PQ-SORT'
 
 }
 
