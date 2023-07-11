@@ -5,19 +5,6 @@ class Program {
     public static void Main(string[] args) {
         Heap h = new Heap(8);
         
-        //Inserções
-        // Node a = h.Insert(1);
-        // Node b = h.Insert(3);
-        // Node a11 = h.Insert(11);
-        // Node a12 = h.Insert(12);
-        // Node b31 = h.Insert(31);
-        // Node b32 = h.Insert(32);
-        // Node a111 = h.Insert(111);
-        // Node a112 = h.Insert(112);
-        // Node a121 = h.Insert(121);
-        // Node a122 = h.Insert(122);
-        // Node b311 = h.Insert(311);
-
         // Novas inserções
         h.Insert(7);
         h.Insert(2);
@@ -33,15 +20,26 @@ class Program {
         h.Mostrar();
 
         // Remove
-        Console.WriteLine($"Elemento {h.RemoveMin()} removido da lista");
-        Console.WriteLine($"O novo último nó é o {h.GetLastNode()} ");
+        Console.WriteLine($"Elemento {h.RemoveMin()} removido da lista"); // 1
+        Console.WriteLine($"O novo último nó é o {h.GetLastNode()} "); // 7
 
         // Mostrar árvore depois do remove
         h.Mostrar();
 
-        Console.WriteLine($"Elemento {h.RemoveMin()} removido da lista");
-        Console.WriteLine($"O novo último nó é o {h.GetLastNode()} ");
-
+        Console.WriteLine();
+        Console.WriteLine($"Elemento {h.RemoveMin()} removido da lista"); // 2
+        Console.WriteLine($"O novo último nó é o {h.GetLastNode()} "); // 9
         h.Mostrar();
+
+        Console.WriteLine();
+        Console.WriteLine($"Elemento {h.RemoveMin()} removido da lista"); // 5
+        Console.WriteLine($"O novo último nó é o {h.GetLastNode()} "); // 8
+        h.Mostrar();
+
+        Console.WriteLine(); // ERRO TÁ AQUI NÃO TA RETORNANDO PRO LADO DIREITO
+        Console.WriteLine($"Elemento {h.RemoveMin()} removido da lista"); // 6
+        Console.WriteLine($"O novo último nó é o {h.GetLastNode()} "); // 9
+        h.Mostrar();
+
     }
 }

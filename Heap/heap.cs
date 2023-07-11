@@ -210,6 +210,7 @@ public class Heap {
             last_node.GetParent().SetRightChild(null);
         }
 
+        DownHeap();
         this.len--;
         this.last_node = new_last_node;
         
@@ -243,6 +244,30 @@ public class Heap {
 
 
     private void DownHeap() {
+        Node node = root;
+        Node old_node = root;
+        while (!Externo(node)) {
+            node = Down(node);
+            if ((int)node.GetKey() < (int)old_node.GetKey()) {
+                SwapKeys(old_node, node); 
+            } else { break; }
+        }
+    }
+
+
+    private Node Down(Node node) {
+        if (Interno(node)) {
+            if (node.GetLeftChild() == null && node.GetRightChild() != null) {
+                node = node.GetRightChild();
+            } else if (node.GetLeftChild() != null && node.GetRightChild() == null){ 
+                node = node.GetLeftChild(); 
+            } else if ((int)node.GetLeftChild().GetKey() < (int)node.GetRightChild().GetKey()) {
+                node = node.GetLeftChild(); 
+            } else { 
+                node = node.GetRightChild(); 
+            }
+        }
+        return node;
         
     }
 
