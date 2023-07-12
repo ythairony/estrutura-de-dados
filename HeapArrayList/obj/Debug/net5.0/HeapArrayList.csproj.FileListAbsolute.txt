@@ -1,0 +1,16 @@
+C:\Users\20222014040015\Desktop\edl\estrutura-de-dados\HeapArrayList\obj\Debug\net5.0\HeapArrayList.csproj.AssemblyReference.cache
+C:\Users\20222014040015\Desktop\edl\estrutura-de-dados\HeapArrayList\obj\Debug\net5.0\HeapArrayList.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\20222014040015\Desktop\edl\estrutura-de-dados\HeapArrayList\obj\Debug\net5.0\HeapArrayList.AssemblyInfoInputs.cache
+C:\Users\20222014040015\Desktop\edl\estrutura-de-dados\HeapArrayList\obj\Debug\net5.0\HeapArrayList.AssemblyInfo.cs
+C:\Users\20222014040015\Desktop\edl\estrutura-de-dados\HeapArrayList\obj\Debug\net5.0\HeapArrayList.csproj.CoreCompileInputs.cache
+C:\Users\20222014040015\Desktop\edl\estrutura-de-dados\HeapArrayList\bin\Debug\net5.0\HeapArrayList.exe
+C:\Users\20222014040015\Desktop\edl\estrutura-de-dados\HeapArrayList\bin\Debug\net5.0\HeapArrayList.deps.json
+C:\Users\20222014040015\Desktop\edl\estrutura-de-dados\HeapArrayList\bin\Debug\net5.0\HeapArrayList.runtimeconfig.json
+C:\Users\20222014040015\Desktop\edl\estrutura-de-dados\HeapArrayList\bin\Debug\net5.0\HeapArrayList.runtimeconfig.dev.json
+C:\Users\20222014040015\Desktop\edl\estrutura-de-dados\HeapArrayList\bin\Debug\net5.0\HeapArrayList.dll
+C:\Users\20222014040015\Desktop\edl\estrutura-de-dados\HeapArrayList\bin\Debug\net5.0\ref\HeapArrayList.dll
+C:\Users\20222014040015\Desktop\edl\estrutura-de-dados\HeapArrayList\bin\Debug\net5.0\HeapArrayList.pdb
+C:\Users\20222014040015\Desktop\edl\estrutura-de-dados\HeapArrayList\obj\Debug\net5.0\HeapArrayList.dll
+C:\Users\20222014040015\Desktop\edl\estrutura-de-dados\HeapArrayList\obj\Debug\net5.0\ref\HeapArrayList.dll
+C:\Users\20222014040015\Desktop\edl\estrutura-de-dados\HeapArrayList\obj\Debug\net5.0\HeapArrayList.pdb
+C:\Users\20222014040015\Desktop\edl\estrutura-de-dados\HeapArrayList\obj\Debug\net5.0\HeapArrayList.genruntimeconfig.cache
