@@ -1,0 +1,15 @@
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\HeapArrayList\bin\Debug\net7.0\HeapArrayList.exe
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\HeapArrayList\bin\Debug\net7.0\HeapArrayList.deps.json
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\HeapArrayList\bin\Debug\net7.0\HeapArrayList.runtimeconfig.json
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\HeapArrayList\bin\Debug\net7.0\HeapArrayList.dll
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\HeapArrayList\bin\Debug\net7.0\HeapArrayList.pdb
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\HeapArrayList\obj\Debug\net7.0\HeapArrayList.csproj.AssemblyReference.cache
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\HeapArrayList\obj\Debug\net7.0\HeapArrayList.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\HeapArrayList\obj\Debug\net7.0\HeapArrayList.AssemblyInfoInputs.cache
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\HeapArrayList\obj\Debug\net7.0\HeapArrayList.AssemblyInfo.cs
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\HeapArrayList\obj\Debug\net7.0\HeapArrayList.csproj.CoreCompileInputs.cache
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\HeapArrayList\obj\Debug\net7.0\HeapArrayList.dll
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\HeapArrayList\obj\Debug\net7.0\refint\HeapArrayList.dll
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\HeapArrayList\obj\Debug\net7.0\HeapArrayList.pdb
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\HeapArrayList\obj\Debug\net7.0\HeapArrayList.genruntimeconfig.cache
+C:\Users\yurit\OneDrive\Documentos\IFRN\período 3\EDL\projetos\estrutura-de-dados\HeapArrayList\obj\Debug\net7.0\ref\HeapArrayList.dll

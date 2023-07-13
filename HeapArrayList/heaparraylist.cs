@@ -41,7 +41,24 @@ class HeapArrayList{
         this.heap.Add(key);
         len++;
         this.heap[0] = len;
+        UpHeap(key);
         this.last_node = (int)heap[len];
+    }
+
+
+    public void UpHeap(int key) {
+        int index = len; 
+        int indexaux = len;
+        int aux;
+        while (index != 1) {
+            index = index / 2;
+            if (key < (int)heap[index]) {
+                aux = (int)heap[index];
+                heap[index] = key;
+                heap[indexaux] = aux;
+                indexaux = index;
+            }
+        }
     }
 
 
