@@ -8,6 +8,11 @@ class Program {
         h.Insert(4);
         h.Insert(8);
         h.Insert(1);
+        Console.WriteLine($"Removendo -> {h.RemoveMin()}");
+        Console.WriteLine($"Removendo -> {h.RemoveMin()}");
+        Console.WriteLine($"Removendo -> {h.RemoveMin()}");
         h.ShowTree();
+        Console.WriteLine();
+        Console.WriteLine($"Último {h.LastNode()}");
     }
 }
