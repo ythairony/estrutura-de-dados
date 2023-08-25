@@ -230,6 +230,30 @@ public class ArvoreBinaria {
         return elem;
     }
 
+
+    public object NewRemove(object elem) {
+        Node no = Pesquisar(raiz, elem);
+        if (Externo(no)) {                      // removendo o no da árvore
+            if (no.GetPai().GetFilhoEsquerdo().Equals(no)) {
+                no.GetPai().SetFilhoEsquerdo(null);
+            } else if (no.GetPai().GetFilhoDireito().Equals(no)) {
+                no.GetPai().SetFilhoDireito(null);
+            }
+        } else if (no.GetFilhoEsquerdo() != null && no.GetFilhoDireito == null) {
+            no.GetPai().SetFilhoEsquerdo(no.GetFilhoEsquerdo());    // subindo o filho esquerdo do nó pro lugar dele
+            no.GetFilhoEsquerdo().SetPai(no.GetPai());              // settando o pai do nó que subiu
+        } else if (no.GetFilhoDireito() != null && no.GetFilhoEsquerdo == null) {
+            no.GetPai().SetFilhoDireito(no.GetFilhoDireito());
+            no.GetFilhoDireito().SetPai(no.GetPai());
+        } else if (no.GetFilhoEsquerdo() == null && no.GetFilhoDireito() == null) {
+            // fazer o código daqui...
+        }
+
+        
+        return elem;
+    }
+
+
     private bool SouFilhoDireito(Node filho) {
         return filho.GetPai().GetFilhoDireito() == filho;
     } 
