@@ -22,16 +22,17 @@ class Program {
         
         // TESTE REMOVE
         Console.WriteLine($"Removido o elemento -> {pinheiro.Remove(2)}");
+        pinheiro.NewRemove(19);
  
         // TESTE ELEMENTS()
-        Console.WriteLine();
-        Console.WriteLine("PRINT ELEMENTOS");
-        IEnumerator elementos = pinheiro.Elements();
-        int i = 1;
-        while (elementos.MoveNext()) {
-            Console.WriteLine($"{i}º elemento da árvore -> {elementos.Current}");
-            i++;
-        }
+        // Console.WriteLine();
+        // Console.WriteLine("PRINT ELEMENTOS");
+        // IEnumerator elementos = pinheiro.Elements();
+        // int i = 1;
+        // while (elementos.MoveNext()) {
+        //     Console.WriteLine($"{i}º elemento da árvore -> {elementos.Current}");
+        //     i++;
+        // }
 
 
         // TESTE MOSTRAR

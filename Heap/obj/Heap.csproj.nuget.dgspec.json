@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\Heap\\Heap.csproj": {}
+    "c:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\Heap\\Heap.csproj": {}
   },
   "projects": {
-    "C:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\Heap\\Heap.csproj": {
+    "c:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\Heap\\Heap.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\Heap\\Heap.csproj",
+        "projectUniqueName": "c:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\Heap\\Heap.csproj",
         "projectName": "Heap",
-        "projectPath": "C:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\Heap\\Heap.csproj",
+        "projectPath": "c:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\Heap\\Heap.csproj",
         "packagesPath": "C:\\Users\\yurit\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\Heap\\obj\\",
+        "outputPath": "c:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\Heap\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\yurit\\AppData\\Roaming\\NuGet\\NuGet.Config"

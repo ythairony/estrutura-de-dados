@@ -233,6 +233,7 @@ public class ArvoreBinaria {
 
     public object NewRemove(object elem) {
         Node no = Pesquisar(raiz, elem);
+        
         if (Externo(no)) {                      // removendo o no da árvore
             if (no.GetPai().GetFilhoEsquerdo().Equals(no)) {
                 no.GetPai().SetFilhoEsquerdo(null);
@@ -245,12 +246,26 @@ public class ArvoreBinaria {
         } else if (no.GetFilhoDireito() != null && no.GetFilhoEsquerdo == null) {
             no.GetPai().SetFilhoDireito(no.GetFilhoDireito());
             no.GetFilhoDireito().SetPai(no.GetPai());
-        } else if (no.GetFilhoEsquerdo() == null && no.GetFilhoDireito() == null) {
-            // fazer o código daqui...
+        } else if (no.GetFilhoEsquerdo() != null && no.GetFilhoDireito() != null) {
+            Node sucessor = Sucessor(no);
+            sucessor.GetPai().SetFilhoEsquerdo(null);
+            sucessor.SetPai(no.GetPai());
+            sucessor.SetFilhoEsquerdo(no.GetFilhoEsquerdo());
+            sucessor.SetFilhoDireito(no.GetFilhoDireito());
         }
 
         
         return elem;
+    }
+
+
+    private Node Sucessor(Node no) {
+        Node sucessor = no.GetFilhoDireito();
+        while (sucessor.GetFilhoEsquerdo() != null) {
+            sucessor = sucessor.GetFilhoEsquerdo();
+        }
+
+        return sucessor;
     }
 
 

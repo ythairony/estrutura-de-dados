@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\TadVector\\TadVector.csproj": {}
+    "c:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\TadVector\\TadVector.csproj": {}
   },
   "projects": {
-    "C:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\TadVector\\TadVector.csproj": {
+    "c:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\TadVector\\TadVector.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\TadVector\\TadVector.csproj",
+        "projectUniqueName": "c:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\TadVector\\TadVector.csproj",
         "projectName": "TadVector",
-        "projectPath": "C:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\TadVector\\TadVector.csproj",
+        "projectPath": "c:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\TadVector\\TadVector.csproj",
         "packagesPath": "C:\\Users\\yurit\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\TadVector\\obj\\",
+        "outputPath": "c:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\TadVector\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\yurit\\AppData\\Roaming\\NuGet\\NuGet.Config"

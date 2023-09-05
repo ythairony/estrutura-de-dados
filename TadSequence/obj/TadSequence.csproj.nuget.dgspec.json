@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\TadSequence\\TadSequence.csproj": {}
+    "c:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\TadSequence\\TadSequence.csproj": {}
   },
   "projects": {
-    "C:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\TadSequence\\TadSequence.csproj": {
+    "c:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\TadSequence\\TadSequence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\TadSequence\\TadSequence.csproj",
+        "projectUniqueName": "c:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\TadSequence\\TadSequence.csproj",
         "projectName": "TadSequence",
-        "projectPath": "C:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\TadSequence\\TadSequence.csproj",
+        "projectPath": "c:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\TadSequence\\TadSequence.csproj",
         "packagesPath": "C:\\Users\\yurit\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\TadSequence\\obj\\",
+        "outputPath": "c:\\Users\\yurit\\OneDrive\\Documentos\\IFRN\\período 3\\EDL\\projetos\\estrutura-de-dados\\TadSequence\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\yurit\\AppData\\Roaming\\NuGet\\NuGet.Config"
